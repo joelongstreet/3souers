@@ -16,6 +16,20 @@
       rel="stylesheet"
     />
 
+    <script type="text/javascript">
+      window.addEventListener(
+        "scroll",
+        () => {
+          document.body.style.setProperty(
+            "--scroll",
+            window.pageYOffset /
+              (document.body.offsetHeight - window.innerHeight)
+          );
+        },
+        false
+      );
+    </script>
+
     <style type="text/css">
       :root {
         --color-1: #faf8cb;
@@ -50,10 +64,49 @@
         transform-origin: center;
         width: 0;
       }
+
+      nav a {
+        color: var(--color-2);
+        text-decoration: none;
+      }
+
+      .profile {
+        margin-bottom: 6rem;
+      }
+
+      .profile-img {
+        border-radius: 100%;
+        border: 0.2rem solid var(--color-2);
+        display: block;
+        margin: 0 auto 2rem;
+        width: 60vw;
+      }
+
+      /* img {
+        width: 100%;
+        max-height: 60vh;
+        border-top: 0.2rem solid var(--color-2);
+        border-bottom: 0.25rem solid var(--color-2);
+        object-fit: cover;
+      } */
+
+      h2 {
+        font-family: var(--font-2);
+        font-size: 2rem;
+        margin: 0 1rem 1rem;
+        text-align: center;
+      }
+
+      p {
+        margin: 0 1rem;
+        line-height: 1.4rem;
+      }
     </style>
   </head>
   <body>
-    <section style="position: relative; width: 100%; height: 100vh">
+    <section
+      style="position: relative; width: 100%; height: 100vh; overflow-x: hidden"
+    >
       <div
         class="triangle"
         style="
@@ -106,14 +159,72 @@
       </div>
     </section>
 
-    <nav>
-      <a href="">about</a>
-      <a href="">make</a>
-      <a href="">contact</a>
+    <nav style="display: flex; justify-content: space-between">
+      <a style="margin-left: 10vw" href="#about">about</a>
+      <a href="#make">make</a>
+      <a style="margin-right: 10vw" href="#contact">contact</a>
     </nav>
 
-    <section>
-      <h2>Jane, 7 - leader, ideator</h2>
+    <section id="about">
+      <div class="profile">
+        <img class="profile-img" src="/jane.jpg" />
+        <h2>Jane, 7 - leader / planner</h2>
+        <p>
+          Jane keeps our projects on track - creating expense charts, wrangling
+          the team and ensuring we stay on task. Even though she's the boss of
+          the operation, Jane is never shy to suggest an ice cream break.
+        </p>
+      </div>
+
+      <div class="profile">
+        <img class="profile-img" src="/ruby.jpg" />
+        <h2>Ruby, 6 - maker / ideator</h2>
+        <p>
+          You'll find Ruby knocking on the door of the shop asking what we're
+          building next. At bed time she likes to talk about all her new ideas
+          and how they'll be made. Ruby is equally handy with the nail gun and
+          the paint bush.
+        </p>
+      </div>
+
+      <div class="profile">
+        <img class="profile-img" src="/lucy.jpg" />
+        <h2>Lucy, 5 - builder / wildcard</h2>
+        <p>
+          Lucy is the baby of the group. There's no telling what she'll say or
+          do next. Lucy loves painting, sneaking snacks and working with Dad.
+          She's full of ideas and likes to let everyone know all about them.
+        </p>
+      </div>
+
+      <div class="profile">
+        <h2>Mama - teacher</h2>
+        <p>
+          Mom (Megan) is the lifeblood of this operation. Without her, none of
+          this would be possible. She's passing on her skills of sewing, cooking
+          and the ability to create great ideas to her three daughters.
+        </p>
+      </div>
+
+      <div class="profile">
+        <h2>Dada - teacher</h2>
+        <p>
+          Dad (Joe) has more than 20 years of experience creating all sorts of
+          things - from buildings, to software applications to room sized video
+          games. He loves nothing more than sharing his knowledge and experience
+          with his three daughters.
+        </p>
+      </div>
+
+      <div class="profile">
+        <img class="profile-img" src="/rufus.jpg" />
+        <h2>Rufus - dog</h2>
+        <p>He's our dog and he's such a good boy!</p>
+      </div>
     </section>
+
+    <section id="make"></section>
+
+    <section id="contact"></section>
   </body>
 </html>
