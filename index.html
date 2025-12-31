@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Shadows+Into+Light&display=swap"
       rel="stylesheet"
     />
 
@@ -121,6 +121,8 @@
       textarea {
         width: 100%;
         padding: 1rem;
+        background-color: var(--ink-soft);
+        color: var(--cream);
         margin-bottom: 1rem;
         border: none;
         font-size: 1.15rem;
@@ -140,13 +142,39 @@
         padding: 3rem 1rem;
         text-align: center;
         font-size: 0.875rem;
-        opacity: 0.6;
+      }
+
+      header {
+        background-image: url("people/header.jpg");
+        height: 100vh;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 4rem;
+        position: relative;
+        color: var(--ink);
+        filter: sepia(20%);
+      }
+
+      header h1 {
+        font-family: "Shadows Into Light", cursive;
+        font-size: 5rem;
+        background-color: var(--cream);
+        padding: 0.25rem 2rem;
+        border: 2px solid var(--line-light);
       }
     </style>
   </head>
 
   <body>
-    <section class="section-light" id="header">
+    <header>
+      <h1>3 soeurs</h1>
+    </header>
+    <section class="section-dark">
       <div class="wrap">
         <h1>Built together.</h1>
         <p>
@@ -164,7 +192,7 @@
       </div>
     </section>
 
-    <section class="section-dark">
+    <section class="section-light">
       <div class="wrap">
         <h2>What we're currently making</h2>
         <p>
@@ -199,7 +227,7 @@
       </div>
     </section>
 
-    <section class="section-light">
+    <section class="section-dark">
       <div class="wrap">
         <h2>How we work together</h2>
         <p>
@@ -245,7 +273,7 @@
       </div>
     </section>
 
-    <section class="section-dark">
+    <section class="section-light">
       <div class="wrap">
         <h2>An open door</h2>
         <p>
@@ -264,7 +292,7 @@
       </div>
     </section>
 
-    <footer class="section-light">
+    <footer class="section-dark">
       Trois Sœurs · Built together in Kansas City, Missouri
     </footer>
   </body>
