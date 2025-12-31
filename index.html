@@ -1,230 +1,271 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>Trois Sœurs</title>
-    <meta
-      name="description"
-      content="Three sisters (Jane, Ruby, Lucy) from Kansas City, Missouri who like to build and make"
-    />
-    <meta name="keywords" content="girls who make, girls who build" />
-    <meta name="author" content="Joe Longstreet" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trois Sœurs — Built together</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Montserrat&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap"
       rel="stylesheet"
     />
 
-    <script type="text/javascript">
-      window.addEventListener(
-        "scroll",
-        () => {
-          document.body.style.setProperty(
-            "--scroll",
-            window.pageYOffset /
-              (document.body.offsetHeight - window.innerHeight)
-          );
-        },
-        false
-      );
-    </script>
-
-    <style type="text/css">
+    <style>
       :root {
-        --color-1: #faf8cb;
-        --color-2: #6d78d1;
-        --color-3: #f1c0e8;
-        --color-4: #b9fbc0;
-        --color-5: #8eebf5;
+        --cream: #f5f3ee;
+        --ink: #1a1a1a;
+        --ink-soft: #2a2a2a;
+        --line-light: rgba(0, 0, 0, 0.08);
+        --line-dark: rgba(255, 255, 255, 0.12);
+      }
 
-        --font-1: "Montserrat", sans-serif;
-        --font-2: "Amatic SC", cursive;
-
-        --shape-size-1: 30vw;
-        --offset-shape-size-horizontal-center: calc(50vw - var(--shape-size-1));
-        --offset-shape-size-vertical-center: calc(
-          50vh - (var(--shape-size-1) / 2)
-        );
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
       }
 
       body {
-        background-color: var(--color-1);
-        color: var(--color-2);
-        font-family: var(--font-1);
         margin: 0;
+        font-family: "DM Sans", system-ui, sans-serif;
+        background: var(--cream);
+        color: var(--ink);
+        line-height: 2rem;
       }
 
-      .triangle {
-        border-bottom: var(--shape-size-1) solid transparent;
-        border-left: var(--shape-size-1) solid transparent;
-        border-right: var(--shape-size-1) solid transparent;
-        height: 0;
-        position: absolute;
-        transform-origin: center;
-        width: 0;
+      h1,
+      h2,
+      h3 {
+        font-family: "Fraunces", serif;
+        font-weight: 400;
+        margin-bottom: 3rem;
       }
-
-      nav a {
-        color: var(--color-2);
-        text-decoration: none;
+      h1 {
+        font-size: 3rem;
       }
-
-      .profile {
-        margin-bottom: 6rem;
-      }
-
-      .profile-img {
-        border-radius: 100%;
-        border: 0.2rem solid var(--color-2);
-        display: block;
-        margin: 0 auto 2rem;
-        width: 60vw;
-      }
-
-      /* img {
-        width: 100%;
-        max-height: 60vh;
-        border-top: 0.2rem solid var(--color-2);
-        border-bottom: 0.25rem solid var(--color-2);
-        object-fit: cover;
-      } */
-
       h2 {
-        font-family: var(--font-2);
-        font-size: 2rem;
-        margin: 0 1rem 1rem;
-        text-align: center;
+        font-size: 1.75rem;
+      }
+      h3 {
+        font-size: 1.5rem;
+      }
+      h4 {
+        font-size: 1.15rem;
+        font-weight: 600;
+      }
+      h5 {
+        font-size: 1.15rem;
+        opacity: 0.7;
+        font-weight: normal;
+      }
+      p {
+        max-width: 45rem;
+        font-size: 1.15rem;
+        margin-bottom: 1rem;
       }
 
-      p {
-        margin: 0 1rem;
-        line-height: 1.4rem;
+      .wrap {
+        max-width: 60rem;
+        margin: 0 auto;
+      }
+
+      section {
+        padding: 5rem 2rem;
+      }
+      .section-light {
+        background: var(--cream);
+        color: var(--ink);
+      }
+      .section-dark {
+        background: var(--ink-soft);
+        color: var(--cream);
+      }
+      .section-light .card {
+        border-color: var(--line-light);
+      }
+      .section-dark .card {
+        border-color: var(--line-dark);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .card {
+        border-top: 2px solid currentColor;
+        padding-top: 1rem;
+      }
+
+      .img {
+        aspect-ratio: 1 / 1;
+        margin-bottom: 1rem;
+        overflow: hidden;
+      }
+      .img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      form {
+        max-width: 45rem;
+        margin-top: 2rem;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border: none;
+        font-size: 1.15rem;
+        font-family: inherit;
+      }
+
+      button {
+        background: transparent;
+        color: inherit;
+        border: 1px solid currentColor;
+        padding: 1rem 1.25rem;
+        font-size: 1.15rem;
+        cursor: pointer;
+      }
+
+      footer {
+        padding: 3rem 1rem;
+        text-align: center;
+        font-size: 0.875rem;
+        opacity: 0.6;
       }
     </style>
   </head>
+
   <body>
-    <section
-      style="position: relative; width: 100%; height: 100vh; overflow-x: hidden"
-    >
-      <div
-        class="triangle"
-        style="
-          border-bottom-color: var(--color-5);
-          transform: translateX(
-              calc(var(--offset-shape-size-horizontal-center) - 20vw)
-            )
-            translateY(calc(var(--offset-shape-size-vertical-center)))
-            rotate(240deg);
-        "
-      ></div>
-      <div
-        class="triangle"
-        style="
-          border-bottom-color: var(--color-4);
-          transform: translateX(
-              calc(var(--offset-shape-size-horizontal-center) + 20vw)
-            )
-            translateY(calc(var(--offset-shape-size-vertical-center)))
-            rotate(135deg);
-        "
-      ></div>
-      <div
-        class="triangle"
-        style="
-          border-bottom-color: var(--color-3);
-          transform: translateX(var(--offset-shape-size-horizontal-center))
-            translateY(
-              calc(
-                var(--offset-shape-size-vertical-center) -
-                  calc(var(--shape-size-1) / 1.25)
-              )
-            )
-            rotate(25deg);
-        "
-      ></div>
-      <div
-        style="
-          background-color: var(--color-1);
-          height: var(--shape-size-1);
-          left: calc(50vw - var(--shape-size-1) / 2);
-          position: absolute;
-          top: calc(50vh - var(--shape-size-1) / 2);
-          width: var(--shape-size-1);
-        "
-      >
-        <h1 style="font-family: var(--font-2); text-align: center; margin: 0">
-          trois sœurs
-        </h1>
+    <section class="section-light" id="header">
+      <div class="wrap">
+        <h1>Built together.</h1>
+        <p>
+          Trois Sœurs (three sisters) started in a shop built by hand, slowly,
+          with help from friends. It's a family of three daughters, a mom, a
+          dad, and a dog named Rufus, working side by side and figuring things
+          out as we go.
+        </p>
+
+        <p>
+          We believe that making things together changes how you see work, time,
+          and one another. That working side by side can create something
+          meaningful, lasting, and shared.
+        </p>
       </div>
     </section>
 
-    <nav style="display: flex; justify-content: space-between">
-      <a style="margin-left: 10vw" href="#about">about</a>
-      <a href="#make">make</a>
-      <a style="margin-right: 10vw" href="#contact">contact</a>
-    </nav>
-
-    <section id="about">
-      <div class="profile">
-        <img class="profile-img" src="/jane.jpg" />
-        <h2>Jane, 7 - leader / planner</h2>
+    <section class="section-dark">
+      <div class="wrap">
+        <h2>What we're currently making</h2>
         <p>
-          Jane keeps our projects on track - creating expense charts, wrangling
-          the team and ensuring we stay on task. Even though she's the boss of
-          the operation, Jane is never shy to suggest an ice cream break.
+          Right now, we're making little libraries. Small structures meant to
+          live outdoors, collect stories, and quietly invite people to stop.
+          They're a way to share books, meet neighbors, and create small moments
+          of connection where people pass by every day.
         </p>
-      </div>
-
-      <div class="profile">
-        <img class="profile-img" src="/ruby.jpg" />
-        <h2>Ruby, 6 - maker / ideator</h2>
         <p>
-          You'll find Ruby knocking on the door of the shop asking what we're
-          building next. At bed time she likes to talk about all her new ideas
-          and how they'll be made. Ruby is equally handy with the nail gun and
-          the paint bush.
+          Each one is built to be used, weathered, and cared for by a community.
         </p>
-      </div>
-
-      <div class="profile">
-        <img class="profile-img" src="/lucy.jpg" />
-        <h2>Lucy, 5 - builder / wildcard</h2>
-        <p>
-          Lucy is the baby of the group. There's no telling what she'll say or
-          do next. Lucy loves painting, sneaking snacks and working with Dad.
-          She's full of ideas and likes to let everyone know all about them.
-        </p>
-      </div>
-
-      <div class="profile">
-        <h2>Mama - teacher</h2>
-        <p>
-          Mom (Megan) is the lifeblood of this operation. Without her, none of
-          this would be possible. She's passing on her skills of sewing, cooking
-          and the ability to create great ideas to her three daughters.
-        </p>
-      </div>
-
-      <div class="profile">
-        <h2>Dada - teacher</h2>
-        <p>
-          Dad (Joe) has more than 20 years of experience creating all sorts of
-          things - from buildings, to software applications to room sized video
-          games. He loves nothing more than sharing his knowledge and experience
-          with his three daughters.
-        </p>
-      </div>
-
-      <div class="profile">
-        <img class="profile-img" src="/rufus.jpg" />
-        <h2>Rufus - dog</h2>
-        <p>He's our dog and he's such a good boy!</p>
+        <div class="grid">
+          <div class="card">
+            <div class="img"><img src="./libraries/after-the-rain.png" /></div>
+            <h4>After the Rain</h4>
+          </div>
+          <div class="card">
+            <div class="img"><img src="./libraries/cedar-exchange.png" /></div>
+            <h4>The Cedar Exchange</h4>
+          </div>
+          <div class="card">
+            <div class="img"><img src="./libraries/reading-haven.png" /></div>
+            <h4>Reading Haven</h4>
+          </div>
+          <div class="card">
+            <div class="img">
+              <img src="./libraries/commonwealth-library.png" />
+            </div>
+            <h4>Commonwealth Library</h4>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="make"></section>
+    <section class="section-light">
+      <div class="wrap">
+        <h2>How we work together</h2>
+        <p>
+          There aren't fixed roles here. We all help where we can, and we lean
+          into each other's strengths. Some of us design and paint. Some of us
+          build and plan. Some of us tell stories, keep track of things, or
+          remind everyone when it's time for a break.
+        </p>
+        <p>The work moves around. That's part of the point.</p>
 
-    <section id="contact"></section>
+        <div class="grid">
+          <div class="card">
+            <div class="img"><img src="./people/jane.jpg" /></div>
+            <h4>Jane</h4>
+            <h5>Storytelling & Sales</h5>
+          </div>
+          <div class="card">
+            <div class="img"><img src="./people/ruby.jpg" /></div>
+            <h4>Ruby</h4>
+            <h5>Design & Color</h5>
+          </div>
+          <div class="card">
+            <div class="img"><img src="./people/lucy.jpg" /></div>
+            <h4>Lucy</h4>
+            <h5>Construction & Counting</h5>
+          </div>
+          <div class="card">
+            <div class="img"><img src="./people/mommy.jpg" /></div>
+            <h4>Mommy</h4>
+            <h5>Operations & Planning</h5>
+          </div>
+          <div class="card">
+            <div class="img"><img src="./people/daddy.jpg" /></div>
+            <h4>Daddy</h4>
+            <h5>Architect & Builder</h5>
+          </div>
+          <div class="card">
+            <div class="img"><img src="./people/rufus.jpg" /></div>
+            <h4>Rufus</h4>
+            <h5>Chief Morale Officer</h5>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-dark">
+      <div class="wrap">
+        <h2>An open door</h2>
+        <p>
+          These projects are meant to move beyond our hands and into other
+          places. If you’re curious about a little library, a custom build, or
+          working together in some way, you can reach us here.
+        </p>
+        <form>
+          <input type="email" placeholder="you@example.com" />
+          <textarea
+            rows="4"
+            placeholder="Interested in a library, bookmarks, or just following along..."
+          ></textarea>
+          <button type="submit">send</button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="section-light">
+      Trois Sœurs · Built together in Kansas City, Missouri
+    </footer>
   </body>
 </html>
