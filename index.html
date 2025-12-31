@@ -19,6 +19,7 @@
         --ink-soft: #2a2a2a;
         --line-light: rgba(0, 0, 0, 0.08);
         --line-dark: rgba(255, 255, 255, 0.12);
+        --highlight: #a6362b;
       }
 
       * {
@@ -137,6 +138,21 @@
         border: none;
         font-size: 1.15rem;
         font-family: inherit;
+      }
+
+      input:-webkit-autofill,
+      textarea:-webkit-autofill,
+      select:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px var(--paper) inset;
+        -webkit-text-fill-color: var(--ink);
+        transition: background-color 5000s ease-in-out 0s;
+      }
+
+      input:focus,
+      textarea:focus {
+        outline: none;
+        border-color: var(--highlight);
+        box-shadow: 0 0 0 2px var(--highlight);
       }
 
       button {
