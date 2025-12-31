@@ -27,7 +27,12 @@
         padding: 0;
       }
 
+      html {
+        background-color: var(--ink);
+      }
+
       body {
+        background-color: var(--ink);
         margin: 0;
         font-family: "DM Sans", system-ui, sans-serif;
         background: var(--cream);
@@ -121,8 +126,8 @@
       textarea {
         width: 100%;
         padding: 1rem;
-        background-color: var(--ink-soft);
-        color: var(--cream);
+        background-color: var(--line-light);
+        color: var(--ink);
         margin-bottom: 1rem;
         border: none;
         font-size: 1.15rem;
@@ -130,8 +135,8 @@
       }
 
       button {
-        background: transparent;
-        color: inherit;
+        background-color: var(--ink-soft);
+        color: var(--cream);
         border: 1px solid currentColor;
         padding: 1rem 1.25rem;
         font-size: 1.15rem;
@@ -189,6 +194,11 @@
           and one another. That working side by side can create something
           meaningful, lasting, and shared.
         </p>
+
+        <div class="grid">
+          <div class="img"><img src="./people/family.jpg" /></div>
+          <div class="img"><img src="./people/family-2.jpg" /></div>
+        </div>
       </div>
     </section>
 
@@ -287,7 +297,7 @@
             rows="4"
             placeholder="Interested in a library, bookmarks, or just following along..."
           ></textarea>
-          <button type="submit">send</button>
+          <button type="submit">Leave a note</button>
         </form>
       </div>
     </section>
