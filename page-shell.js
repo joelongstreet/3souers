@@ -11,12 +11,22 @@ class PageShell extends HTMLElement {
         ${hero ? "<h1>3sœurs</h1>" : `<a href="${baseURL}"><h1>3sœurs - Built Together</h1></a>`}
       </header>
       <slot></slot>
-      <section>
+      <div class="footer-wrap">
         <footer>
-          Trois Sœurs · Built together in Kansas City, Missouri
+          <span><a href="${baseURL}">Trois Sœurs</a> · Built together in Kansas City, Missouri</span>
+          <nav>
+            <a href="${baseURL}#about">About</a>
+            <a href="${baseURL}#contact">Contact</a>
+          </nav>
         </footer>
-      </section>
+      </div>
     `;
+  }
+
+  connectedCallback() {
+    const count = this.querySelectorAll("page-section").length;
+    const theme = count % 2 === 1 ? "light" : "dark";
+    this.shadowRoot.querySelector(".footer-wrap").classList.add(theme);
   }
 }
 
