@@ -63,47 +63,6 @@ p {
   margin-bottom: 1rem;
 }
 
-header h1 {
-  font-family: "Shadows Into Light", cursive;
-}
-
-header.hero {
-  background-image: url("./people/header.JPG");
-  height: 100vh;
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  color: var(--highlight);
-  filter: sepia(20%);
-}
-
-header.hero h1 {
-  font-size: 5rem;
-  padding: 2rem;
-  text-align: right;
-  color: var(--ink);
-}
-
-header.bar {
-  background: var(--cream);
-  color: var(--ink);
-}
-
-header.bar a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-  color: inherit;
-  text-decoration: none;
-}
-
-header.bar h1 {
-  font-size: 2rem;
-  margin: 0;
-}
 
 page-section:nth-of-type(odd) {
   --section-bg: var(--ink-soft);
@@ -121,17 +80,6 @@ page-section:nth-of-type(even) {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
-}
-
-.img {
-  aspect-ratio: 1 / 1;
-  margin-bottom: 1rem;
-  overflow: hidden;
-}
-.img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 form {
@@ -175,39 +123,3 @@ button {
   cursor: pointer;
 }
 
-.footer-wrap.dark {
-  background: var(--ink-soft);
-  color: var(--cream);
-}
-
-.footer-wrap.light {
-  background: var(--cream);
-  color: var(--ink);
-}
-
-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem;
-  font-size: 0.875rem;
-  gap: 1rem;
-}
-
-footer a {
-  color: inherit;
-  text-decoration: none;
-}
-
-footer nav a {
-  opacity: 0.7;
-}
-
-footer nav a:hover {
-  opacity: 1;
-}
-
-footer nav {
-  display: flex;
-  gap: 1.5rem;
-}
