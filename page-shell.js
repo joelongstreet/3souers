@@ -1,11 +1,14 @@
+const baseURL = new URL(".", import.meta.url).href;
+
 class PageShell extends HTMLElement {
   constructor() {
     super();
     const shadow = this.attachShadow({ mode: "open" });
+    const hero = this.hasAttribute("hero");
     shadow.innerHTML = `
-      <link rel="stylesheet" href="styles.css" />
-      <header>
-        <h1>3sœurs</h1>
+      <link rel="stylesheet" href="${baseURL}styles.css" />
+      <header class="${hero ? "hero" : "bar"}">
+        ${hero ? "<h1>3sœurs</h1>" : `<a href="${baseURL}"><h1>3sœurs - Built Together</h1></a>`}
       </header>
       <slot></slot>
       <section>
