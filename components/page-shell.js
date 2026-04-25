@@ -1,6 +1,6 @@
-const baseURL = new URL(".", import.meta.url).href;
+const baseURL = new URL("..", import.meta.url).href;
 
-class PageShell extends HTMLElement {
+export class PageShell extends HTMLElement {
   constructor() {
     super();
     const shadow = this.attachShadow({ mode: "open" });
@@ -30,33 +30,4 @@ class PageShell extends HTMLElement {
   }
 }
 
-class PageSection extends HTMLElement {
-  constructor() {
-    super();
-    const shadow = this.attachShadow({ mode: "open" });
-    shadow.innerHTML = `
-      <style>
-        :host {
-          display: block;
-          background: var(--section-bg, var(--cream));
-          color: var(--section-color, var(--ink));
-        }
-        section {
-          padding: 5rem 2rem;
-        }
-        .wrap {
-          max-width: 60rem;
-          margin: 0 auto;
-        }
-      </style>
-      <section>
-        <div class="wrap">
-          <slot></slot>
-        </div>
-      </section>
-    `;
-  }
-}
-
 customElements.define("page-shell", PageShell);
-customElements.define("page-section", PageSection);

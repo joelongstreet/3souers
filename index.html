@@ -6,7 +6,7 @@
     <title>3 Sœurs — Built together</title>
 
     <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="page-shell.js"></script>
+    <script type="module" src="./components/index.js"></script>
   </head>
 
   <body>
@@ -25,11 +25,6 @@
           and one another. That working side by side can create something
           meaningful, lasting, and shared.
         </p>
-
-        <div class="grid">
-          <div class="img"><img src="./people/family.jpg" /></div>
-          <div class="img"><img src="./people/family-2.jpg" /></div>
-        </div>
       </page-section>
 
       <page-section>
@@ -44,64 +39,42 @@
           Each one is built to be used, weathered, and cared for by a community.
         </p>
         <div class="grid">
-          <div class="card">
-            <div class="img">
-              <img src="./libraries/after-the-rain.png" />
-            </div>
-            <h4>After the Rain</h4>
-            <h5>$300</h5>
-            <p>
-              A small reading shelter that favors quiet, softness, and the
-              feeling of things newly washed.
-            </p>
-          </div>
-          <div class="card">
-            <div class="img">
-              <img src="./libraries/cedar-exchange.png" />
-            </div>
-            <h4>The Cedar Exchange</h4>
-            <h5>$300</h5>
-            <p>
-              Built to change. Exposed cedar weathers slowly, fading into a
-              quiet silver-gray as years pass.
-            </p>
-          </div>
-          <div class="card">
-            <div class="img"><img src="./libraries/reading-haven.png" /></div>
-            <h4>The Half-Timber Library</h4>
-            <h5>$350</h5>
-            <p>
-              A small reading shelter that feels borrowed from folklore, as if
-              built for gnomes, elves, or other quiet residents.
-            </p>
-          </div>
-          <div class="card">
-            <div class="img"><img src="./libraries/greenhouse.png" /></div>
-            <h4>The Greenhouse</h4>
-            <h5>$400</h5>
-            <p>
-              A place for reading shaped by light, growth, and seasonal change.
-            </p>
-          </div>
-          <div class="card">
-            <div class="img">
-              <img src="./libraries/commonwealth-library.png" />
-            </div>
-            <h4>Commonwealth Library</h4>
-            <h5>$300</h5>
-            <p>
-              Built as a shared civic object, it belongs to the neighborhood
-              through use, care, and continuity.
-            </p>
-          </div>
-          <div class="card">
-            <div class="img"><img src="./libraries/mosshouse.png" /></div>
-            <h4>Mosshouse</h4>
-            <h5>$300</h5>
-            <p>
-              A reading shelter shaped by moisture, softness, and stillness.
-            </p>
-          </div>
+          <page-card
+            image="./libraries/after-the-rain.png"
+            title="After the Rain"
+            subtitle="$300"
+            description="A small reading shelter that favors quiet, softness, and the feeling of things newly washed."
+          ></page-card>
+          <page-card
+            image="./libraries/cedar-exchange.png"
+            title="The Cedar Exchange"
+            subtitle="$300"
+            description="Built to change. Exposed cedar weathers slowly, fading into a quiet silver-gray as years pass."
+          ></page-card>
+          <page-card
+            image="./libraries/reading-haven.png"
+            title="The Half-Timber Library"
+            subtitle="$350"
+            description="A small reading shelter that feels borrowed from folklore, as if built for gnomes, elves, or other quiet residents."
+          ></page-card>
+          <page-card
+            image="./libraries/greenhouse.png"
+            title="The Greenhouse"
+            subtitle="$400"
+            description="A place for reading shaped by light, growth, and seasonal change."
+          ></page-card>
+          <page-card
+            image="./libraries/commonwealth-library.png"
+            title="Commonwealth Library"
+            subtitle="$300"
+            description="Built as a shared civic object, it belongs to the neighborhood through use, care, and continuity."
+          ></page-card>
+          <page-card
+            image="./libraries/mosshouse.png"
+            title="Mosshouse"
+            subtitle="$300"
+            description="A reading shelter shaped by moisture, softness, and stillness."
+          ></page-card>
         </div>
       </page-section>
 
@@ -116,58 +89,42 @@
         <p>The work shifts between us. That's part of how it stays shared.</p>
 
         <div class="grid">
-          <div class="card">
-            <div class="img"><img src="./people/jane.jpg" /></div>
-            <h4>Jane</h4>
-            <h5>Storytelling & Sales</h5>
-            <p>
-              Often telling the story, sharing what we're making, and helping
-              things find their way into the world.
-            </p>
-          </div>
-          <div class="card">
-            <div class="img"><img src="./people/ruby.jpg" /></div>
-            <h4>Ruby</h4>
-            <h5>Design & Color</h5>
-            <p>
-              Drawn to color, design, and how things look and feel once they're
-              finished.
-            </p>
-          </div>
-          <div class="card">
-            <div class="img"><img src="./people/lucy.jpg" /></div>
-            <h4>Lucy</h4>
-            <h5>Construction & Counting</h5>
-            <p>
-              Usually building, counting, and making sure things hold together
-              the way they should.
-            </p>
-          </div>
-          <div class="card">
-            <div class="img"><img src="./people/mommy.jpg" /></div>
-            <h4>Mommy</h4>
-            <h5>Operations & Planning</h5>
-            <p>
-              Keeping things organized, planned, and moving forward with care.
-            </p>
-          </div>
-          <div class="card">
-            <div class="img"><img src="./people/daddy.jpg" /></div>
-            <h4>Daddy</h4>
-            <h5>Architect & Builder</h5>
-            <p>
-              Designing, building, and helping turn ideas into something solid.
-            </p>
-          </div>
-          <div class="card">
-            <div class="img"><img src="./people/rufus.jpg" /></div>
-            <h4>Rufus</h4>
-            <h5>Chief Morale Officer</h5>
-            <p>
-              Always nearby, supervising quietly, and reminding everyone to take
-              breaks.
-            </p>
-          </div>
+          <page-card
+            image="./people/jane.jpg"
+            title="Jane"
+            subtitle="Storytelling &amp; Sales"
+            description="Often telling the story, sharing what we're making, and helping things find their way into the world."
+          ></page-card>
+          <page-card
+            image="./people/ruby.jpg"
+            title="Ruby"
+            subtitle="Design &amp; Color"
+            description="Drawn to color, design, and how things look and feel once they're finished."
+          ></page-card>
+          <page-card
+            image="./people/lucy.jpg"
+            title="Lucy"
+            subtitle="Construction &amp; Counting"
+            description="Usually building, counting, and making sure things hold together the way they should."
+          ></page-card>
+          <page-card
+            image="./people/mommy.jpg"
+            title="Mommy"
+            subtitle="Operations &amp; Planning"
+            description="Keeping things organized, planned, and moving forward with care."
+          ></page-card>
+          <page-card
+            image="./people/daddy.jpg"
+            title="Daddy"
+            subtitle="Architect &amp; Builder"
+            description="Designing, building, and helping turn ideas into something solid."
+          ></page-card>
+          <page-card
+            image="./people/rufus.jpg"
+            title="Rufus"
+            subtitle="Chief Morale Officer"
+            description="Always nearby, supervising quietly, and reminding everyone to take breaks."
+          ></page-card>
         </div>
       </page-section>
 
