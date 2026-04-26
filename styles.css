@@ -116,19 +116,3 @@ button {
   font-size: 1.15rem;
   cursor: pointer;
 }
-
-.poster-band {
-  width: 100%;
-  background-color: var(--ink-soft);
-}
-
-.poster {
-  max-width: 60rem;
-  margin: 0 auto;
-}
-
-.poster img {
-  display: block;
-  width: 100%;
-  height: auto;
-}

@@ -38,6 +38,7 @@ export class PageShell extends HTMLElement {
         header.bar {
           background: var(--cream);
           color: var(--ink);
+          border-bottom: 2px solid var(--ink);
         }
         header.bar a {
           display: flex;

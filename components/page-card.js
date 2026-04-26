@@ -12,7 +12,8 @@ export class PageCard extends HTMLElement {
       <style>
         :host {
           display: block;
-          padding-top: 1rem;
+          border-bottom: 1px solid var(--section-color, var(--ink));
+          padding-bottom: 1rem !important;
         }
         .img {
           aspect-ratio: 1 / 1;
@@ -28,12 +29,12 @@ export class PageCard extends HTMLElement {
         a { display: block; }
         a:hover .img img { transform: scale(1.03); }
         h4 { font-size: 1.15rem; font-weight: 600; margin: 0; }
-        h5 { font-size: 1.15rem; opacity: 0.7; font-style: italic; font-weight: normal; margin: 0; }
+        h5 { font-size: 1rem; opacity: 0.7; font-style: italic; font-weight: normal; margin: 0; line-height: 1rem; }
         p  { font-size: 1rem; line-height: 1.5rem; margin: 0.5rem 0 0; }
       </style>
       ${href ? `<a href="${href}">${img}</a>` : img}
       <h4>${title}</h4>
-      <h5>${subtitle}</h5>
+      ${subtitle ? `<h5>${subtitle}</h5>` : ""}
       <p>${description}</p>
     `;
   }
