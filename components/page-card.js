@@ -7,6 +7,7 @@ export class PageCard extends HTMLElement {
     const subtitle = this.getAttribute("subtitle") || "";
     const description = this.getAttribute("description") || "";
     const href = this.getAttribute("href");
+    const cta = this.getAttribute("cta");
     const img = `<div class="img"><img src="${image}" alt="${title}" /></div>`;
     shadow.innerHTML = `
       <style>
@@ -31,11 +32,25 @@ export class PageCard extends HTMLElement {
         h4 { font-size: 1.15rem; font-weight: 600; margin: 0; }
         h5 { font-size: 1rem; opacity: 0.7; font-style: italic; font-weight: normal; margin: 0; line-height: 1rem; }
         p  { font-size: 1rem; line-height: 1.5rem; margin: 0.5rem 0 0; }
+        .cta {
+          display: inline-block;
+          margin-top: 0.75rem;
+          padding: 0.25rem 0.75rem;
+          background: var(--highlight);
+          color: var(--cream);
+          text-decoration: none;
+          font-size: 0.95rem;
+          border-radius: var(--btn-radius, 4px);
+          box-shadow: var(--btn-shadow, 2px 2px 0 rgba(0, 0, 0, 0.2));
+          letter-spacing: var(--btn-letter-spacing, 0.04em);
+        }
+        .cta:hover { opacity: 0.85; }
       </style>
       ${href ? `<a href="${href}">${img}</a>` : img}
       <h4>${title}</h4>
       ${subtitle ? `<h5>${subtitle}</h5>` : ""}
       <p>${description}</p>
+      ${href && cta ? `<a class="cta" href="${href}">${cta} »</a>` : ""}
     `;
   }
 }

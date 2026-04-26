@@ -5,6 +5,9 @@
   --ink: #1a1a1a;
   --ink-soft: #2a2a2a;
   --highlight: #a6362b;
+  --btn-radius: 4px;
+  --btn-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+  --btn-letter-spacing: 0.04em;
 }
 
 *,
@@ -111,8 +114,25 @@ textarea:focus {
 button {
   background-color: var(--highlight);
   color: var(--cream);
-  border: 1px solid currentColor;
+  border: none;
   padding: 1rem 1.25rem;
   font-size: 1.15rem;
+  font-family: inherit;
   cursor: pointer;
+  border-radius: var(--btn-radius);
+  box-shadow: var(--btn-shadow);
+  letter-spacing: var(--btn-letter-spacing);
 }
+
+.btn {
+  display: inline-block;
+  background: var(--highlight);
+  color: var(--cream);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  border-radius: var(--btn-radius);
+  box-shadow: var(--btn-shadow);
+  letter-spacing: var(--btn-letter-spacing);
+}
+.btn:hover { opacity: 0.85; }
