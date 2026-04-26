@@ -63,7 +63,6 @@ p {
   margin-bottom: 1rem;
 }
 
-
 page-section:nth-of-type(odd) {
   --section-bg: var(--ink-soft);
   --section-color: var(--cream);
@@ -123,3 +122,9 @@ button {
   cursor: pointer;
 }
 
+img {
+  margin-bottom: 2rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
