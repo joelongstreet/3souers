@@ -4,8 +4,6 @@
   --cream: #f5f3ee;
   --ink: #1a1a1a;
   --ink-soft: #2a2a2a;
-  --line-light: rgba(0, 0, 0, 0.08);
-  --line-dark: rgba(255, 255, 255, 0.12);
   --highlight: #a6362b;
 }
 
@@ -66,12 +64,10 @@ p {
 page-section:nth-of-type(odd) {
   --section-bg: var(--ink-soft);
   --section-color: var(--cream);
-  --card-border: var(--line-dark);
 }
 page-section:nth-of-type(even) {
   --section-bg: var(--cream);
   --section-color: var(--ink);
-  --card-border: var(--line-light);
 }
 
 .grid {
@@ -90,7 +86,6 @@ input,
 textarea {
   width: 100%;
   padding: 1rem;
-  background-color: var(--line-light);
   color: var(--ink);
   margin-bottom: 1rem;
   border: none;

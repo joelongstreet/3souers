@@ -12,7 +12,6 @@ export class PageCard extends HTMLElement {
       <style>
         :host {
           display: block;
-          border-top: 2px solid var(--card-border, currentColor);
           padding-top: 1rem;
         }
         .img {

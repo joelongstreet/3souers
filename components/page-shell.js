@@ -11,6 +11,7 @@ export class PageShell extends HTMLElement {
           font-family: "Shadows Into Light", cursive;
         }
         header.hero {
+          box-sizing: border-box;
           background-image: url("${baseURL}people/header.JPG");
           height: 100vh;
           width: 100%;
@@ -20,13 +21,19 @@ export class PageShell extends HTMLElement {
           position: relative;
           color: var(--highlight);
           filter: sepia(20%);
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-end;
+          padding: 2rem;
         }
         header.hero h1 {
           font-size: 5rem;
-          padding: 2rem;
-          text-align: right;
+          padding: 0.5rem 1.25rem;
           color: var(--ink);
           margin: 0;
+          background: var(--cream);
+          display: inline-block;
+          border: 2px solid rgba(0, 0, 0, 0.2);
         }
         header.bar {
           background: var(--cream);
