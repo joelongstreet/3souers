@@ -4,43 +4,16 @@ export class PageShell extends HTMLElement {
   constructor() {
     super();
     const shadow = this.attachShadow({ mode: "open" });
-    const hero = this.hasAttribute("hero");
+    const noHeader = this.hasAttribute("no-header");
     shadow.innerHTML = `
       <style>
-        header h1 {
-          font-family: "Shadows Into Light", cursive;
-        }
-        header.hero {
-          box-sizing: border-box;
-          background-image: url("${baseURL}people/header.JPG");
-          height: 100vh;
-          width: 100%;
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
-          position: relative;
-          color: var(--highlight);
-          filter: sepia(20%);
-          display: flex;
-          align-items: flex-start;
-          justify-content: flex-end;
-          padding: 2rem;
-        }
-        header.hero h1 {
-          font-size: 5rem;
-          padding: 0.5rem 1.25rem;
-          color: var(--ink);
-          margin: 0;
-          background: var(--cream);
-          display: inline-block;
-          border: 2px solid rgba(0, 0, 0, 0.2);
-        }
-        header.bar {
+        header {
           background: var(--cream);
           color: var(--ink);
           border-bottom: 2px solid var(--ink);
+          font-family: "Shadows Into Light", cursive;
         }
-        header.bar a {
+        header a {
           display: flex;
           align-items: center;
           justify-content: center;
@@ -48,7 +21,7 @@ export class PageShell extends HTMLElement {
           color: inherit;
           text-decoration: none;
         }
-        header.bar h1 {
+        header h1 {
           font-size: 2rem;
           margin: 0;
         }
@@ -83,9 +56,7 @@ export class PageShell extends HTMLElement {
           gap: 1.5rem;
         }
       </style>
-      <header class="${hero ? "hero" : "bar"}">
-        ${hero ? "<h1>3sœurs</h1>" : `<a href="${baseURL}"><h1>3sœurs - Built Together</h1></a>`}
-      </header>
+      ${noHeader ? "" : `<header><a href="${baseURL}"><h1>3sœurs - Built Together</h1></a></header>`}
       <slot></slot>
       <div class="footer-wrap">
         <footer>

@@ -8,16 +8,63 @@
     <link rel="stylesheet" href="styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="module" src="./components/index.js"></script>
+    <style>
+      .hero {
+        box-sizing: border-box;
+        height: 100vh;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        padding: 2rem;
+      }
+      .hero video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        filter: sepia(20%);
+        z-index: 0;
+      }
+      .hero h1 {
+        font-family: "Shadows Into Light", cursive;
+        position: relative;
+        z-index: 1;
+        font-size: 5rem;
+        font-weight: 400;
+        line-height: 0.5;
+        padding: 0 0.5rem;
+        color: var(--ink);
+        margin: 0;
+        background: color-mix(in srgb, var(--cream) 50%, transparent);
+        display: inline-block;
+      }
+    </style>
   </head>
 
   <body>
-    <page-shell hero>
+    <div class="hero">
+      <video autoplay muted loop playsinline poster="./people/header.JPG">
+        <source
+          src="https://www3.cde.ca.gov/download/rod/big_buck_bunny.mp4"
+          type="video/mp4"
+        />
+      </video>
+      <h1>3sœurs</h1>
+    </div>
+    <page-shell no-header>
       <page-section id="about">
         <h1>Built together.</h1>
         <p>
-          3 Sœurs is French for three sisters. We're Jane, Ruby, and Lucy, plus
-          a mom, a dad, and a dog named Rufus who mostly just supervises. We
-          build things together, out of a little shop, with help from friends
+          Trois Sœurs is French for three sisters. We're Jane, Ruby, and Lucy,
+          plus a mom, a dad, and a dog named Rufus who mostly just supervises.
+          We build things together, out of a little shop, with help from friends
           when we need it.
         </p>
 
