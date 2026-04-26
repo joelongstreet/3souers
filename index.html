@@ -6,6 +6,7 @@
     <title>3 Sœurs — Built together</title>
 
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="module" src="./components/index.js"></script>
   </head>
 
@@ -14,29 +15,29 @@
       <page-section id="about">
         <h1>Built together.</h1>
         <p>
-          3 Sœurs (French for three sisters) started in a shop built by hand,
-          slowly, with help from friends. It's a family of three daughters, a
-          mom, a dad, and a dog named Rufus, working side by side and figuring
-          things out as we go.
+          3 Sœurs is French for three sisters. We're Jane, Ruby, and Lucy —
+          plus a mom, a dad, and a dog named Rufus who mostly just supervises.
+          We build things together, out of a little shop, with help from friends
+          when we need it.
         </p>
 
         <p>
-          We believe that making things together changes how you see work, time,
-          and one another. That working side by side can create something
-          meaningful, lasting, and shared.
+          Something happens when you build things with your hands alongside
+          people you love. We're still figuring out exactly what it is, but we
+          keep showing up anyway.
         </p>
       </page-section>
 
       <page-section>
         <h2>What we're currently making</h2>
         <p>
-          Right now, we're making little libraries. Small structures meant to
-          live outdoors, collect stories, and quietly invite people to stop.
-          They're a way to share books, meet neighbors, and create small moments
-          of connection where people pass by every day.
+          Right now, it's little libraries. The kind you find on a corner and
+          stop at for just a second to peek inside. We build them to live
+          outside, collect some weather, and give people a small excuse to slow
+          down.
         </p>
         <p>
-          Each one is built to be used, weathered, and cared for by a community.
+          Each one ends up belonging to wherever it lands.
         </p>
         <div class="grid">
           <page-card
@@ -44,28 +45,28 @@
             image="./1/poster.png"
             title="After the Rain"
             subtitle="For Us"
-            description="A neighborhood gathering point that turns everyday moments into quiet connections."
+            description="Lives in our front yard. Started as ours, but the neighborhood had other ideas."
           ></page-card>
           <page-card
             href="/2"
             image="./2/poster.png"
             title="Scrap Lumber"
             subtitle="For Académie Lafayette"
-            description="Built from scraps and set along a daily path, a reminder that small creations can leave a lasting mark."
+            description="Built from leftovers, which feels right for a school that teaches kids to make something out of anything."
           ></page-card>
           <page-card
             href="/3"
             image="./3/poster.png"
             title="The Cedar Exchange"
             subtitle="For Louanne Hein"
-            description="A small gesture honoring a teacher who shows that art is not just learned, but felt and shared."
+            description="A small thank-you to the person who taught Ruby that art is a feeling first and a skill second."
           ></page-card>
           <page-card
             href="/4"
             image="./4/poster.png"
             title="The Greenhouse"
             subtitle="For Grandma Mary and Papa Mark"
-            description="A reflection of the steady, thoughtful presence of grandparents who meet each child exactly where they are."
+            description="For two grandparents who somehow always know exactly how to meet each kid where they are."
           ></page-card>
         </div>
       </page-section>
@@ -73,69 +74,96 @@
       <page-section>
         <h2>How we work together</h2>
         <p>
-          We do have roles here, but they're held lightly. Each of us leans into
-          what we're best at, and steps in wherever the work needs help. Some
-          days that means designing and painting. Other days it's building,
-          planning, telling stories, or keeping things moving.
+          We have roles, loosely. Mostly we just do whatever needs doing. Some
+          days that's painting and debating colors. Other days it's measuring
+          things twice and still getting them slightly wrong.
         </p>
-        <p>The work shifts between us. That's part of how it stays shared.</p>
+        <p>It shifts around. That's kind of the whole point.</p>
 
         <div class="grid">
           <page-card
             image="./people/jane.jpg"
             title="Jane"
             subtitle="Storytelling &amp; Sales"
-            description="Often telling the story, sharing what we're making, and helping things find their way into the world."
+            description="Tells the story. Finds the people. Gets things out the door."
           ></page-card>
           <page-card
             image="./people/ruby.jpg"
             title="Ruby"
             subtitle="Design &amp; Color"
-            description="Drawn to color, design, and how things look and feel once they're finished."
+            description="Has strong opinions about color. This is a feature, not a bug."
           ></page-card>
           <page-card
             image="./people/lucy.jpg"
             title="Lucy"
             subtitle="Construction &amp; Counting"
-            description="Usually building, counting, and making sure things hold together the way they should."
+            description="Builds things, counts things, makes sure they hold together."
           ></page-card>
           <page-card
             image="./people/mommy.jpg"
             title="Mommy"
             subtitle="Operations &amp; Planning"
-            description="Keeping things organized, planned, and moving forward with care."
+            description="Keeps the whole thing from going sideways."
           ></page-card>
           <page-card
             image="./people/daddy.jpg"
             title="Daddy"
             subtitle="Architect &amp; Builder"
-            description="Designing, building, and helping turn ideas into something solid."
+            description="Designs it, builds it, probably rebuilds it once."
           ></page-card>
           <page-card
             image="./people/rufus.jpg"
             title="Rufus"
             subtitle="Chief Morale Officer"
-            description="Always nearby, supervising quietly, and reminding everyone to take breaks."
+            description="Has never once been helpful, but we keep him around anyway."
           ></page-card>
         </div>
       </page-section>
 
       <page-section id="contact">
-        <h2>An open door</h2>
-        <p>
-          These projects are meant to move beyond our hands and into other
-          places. If you're curious about a little library, a custom build, or
-          working together in some way, you can reach us here.
+        <h2 id="contact-heading">An open door</h2>
+        <p id="contact-intro">
+          If you want a little library for your yard, your school, or somewhere
+          you think could use one — or if you just want to say hi — we'd love
+          to hear from you.
         </p>
-        <form>
-          <input type="text" placeholder="Where we can reach you" />
+        <form id="contact-form">
+          <input type="text" name="email" placeholder="Where we can reach you" required />
           <textarea
             rows="4"
+            name="message"
             placeholder="What you're thinking about"
+            required
           ></textarea>
           <button type="submit">Let's see where this goes</button>
         </form>
       </page-section>
     </page-shell>
   </body>
+  <script type="module">
+    emailjs.init({ publicKey: "bj2L_S3nwdlIeg191" });
+
+    const form = document.getElementById("contact-form");
+    const heading = document.getElementById("contact-heading");
+    const intro = document.getElementById("contact-intro");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const btn = form.querySelector("button");
+      btn.disabled = true;
+      btn.textContent = "Sending...";
+
+      emailjs.sendForm("3Soeurs", "template_61eezn8", form).then(
+        () => {
+          form.style.display = "none";
+          intro.style.display = "none";
+          heading.textContent = "Got it — we'll be in touch.";
+        },
+        () => {
+          btn.disabled = false;
+          btn.textContent = "Let's see where this goes";
+        }
+      );
+    });
+  </script>
 </html>
