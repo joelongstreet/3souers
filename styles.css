@@ -50,6 +50,7 @@
 
 html {
   background-color: var(--ink-soft);
+  overflow-x: hidden;
 }
 
 body {
@@ -59,6 +60,7 @@ body {
   background: var(--cream);
   color: var(--ink);
   line-height: 2rem;
+  overflow-x: hidden;
 }
 
 h1,
