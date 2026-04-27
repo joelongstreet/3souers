@@ -61,30 +61,34 @@
         z-index: 0;
       }
 
-      .hero h1 {
-        font-family: "Shadows Into Light", cursive;
+      .hero-logo {
         position: relative;
         z-index: 1;
-        font-size: 5rem;
-        font-weight: 400;
-        padding: 0 0.5rem;
-        color: var(--cream);
-        margin: 0;
-        text-shadow: 2px 2px 3px var(--ink);
-        display: inline-block;
-      }
-      .hero h1::before {
-        content: "";
-        position: absolute;
-        inset: -0.3em -0.5em;
+        padding: 2rem 4rem;
+        margin-top: -2rem;
+        margin-right: -5rem;
         background: url("./paint-stroke.png") center / 100% 100% no-repeat;
         filter: hue-rotate(var(--stroke-hue, 0deg));
-        z-index: -1;
+        mask-image: url("./logo.svg"), linear-gradient(black, black);
+        mask-composite: subtract;
+        mask-size:
+          auto 4rem,
+          100%;
+        mask-repeat: no-repeat, no-repeat;
+        mask-position: center, center;
+        -webkit-mask-image: url("./logo.svg"), linear-gradient(black, black);
+        -webkit-mask-composite: destination-out;
+        -webkit-mask-size:
+          auto 4rem,
+          100%;
+        -webkit-mask-repeat: no-repeat, no-repeat;
+        -webkit-mask-position: center, center;
       }
-      .hero .three {
-        font-size: 6rem;
-        vertical-align: middle;
-        padding-right: 0.5rem;
+      .hero-logo .logo {
+        display: block;
+        height: 4rem;
+        aspect-ratio: 142 / 117;
+        visibility: hidden;
       }
     </style>
   </head>
@@ -97,7 +101,7 @@
           type="video/mp4"
         />
       </video>
-      <h1><span class="three">3</span>sœurs</h1>
+      <a class="hero-logo" href="#about"><span class="logo"></span></a>
     </div>
     <page-shell no-header>
       <page-section id="about">
