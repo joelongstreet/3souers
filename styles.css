@@ -164,6 +164,7 @@ button {
   border-radius: var(--btn-radius);
   box-shadow: var(--btn-shadow);
   letter-spacing: var(--btn-letter-spacing);
+  margin-top: 1rem;
 }
 .btn:hover {
   opacity: 0.85;
