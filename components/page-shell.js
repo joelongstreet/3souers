@@ -9,8 +9,8 @@ export class PageShell extends HTMLElement {
       <style>
         header {
           background: var(--ink-soft);
-          color: var(--cream);
-          border-bottom: 1px solid var(--cream);
+          color: var(--ink-soft);
+          border-bottom: 1px solid var(--ink);
           font-family: "Shadows Into Light", cursive;
         }
         header a {
@@ -22,8 +22,18 @@ export class PageShell extends HTMLElement {
           text-decoration: none;
         }
         header h1 {
-          font-size: 2rem;
+          font-size: 2.5rem;
           margin: 0;
+          position: relative;
+          z-index: 1;
+        }
+        header h1::before {
+          content: "";
+          position: absolute;
+          inset: -0.4em -3em;
+          background: url('${baseURL}paint-stroke.png') center / 100% 100% no-repeat;
+          filter: hue-rotate(var(--stroke-hue, 0deg));
+          z-index: -1;
         }
         .footer-wrap.dark {
           background: var(--ink-soft);
@@ -50,6 +60,26 @@ export class PageShell extends HTMLElement {
           display: flex;
           gap: 1.5rem;
         }
+        .logo-wrap {
+          position: relative;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .logo-wrap::before {
+          content: "";
+          position: absolute;
+          inset: -1.5em -8em;
+          background: url('${baseURL}paint-stroke.png') center / 100% 100% no-repeat;
+          filter: hue-rotate(var(--stroke-hue, 0deg));
+          z-index: 0;
+        }
+        .logo-wrap a {
+          position: relative;
+          z-index: 1;
+        }
+        .footer-wrap.dark .logo { background-color: var(--ink-soft); }
+        .footer-wrap.light .logo { background-color: var(--cream); }
         .logo {
           display: block;
           height: 4.5rem;
@@ -69,7 +99,7 @@ export class PageShell extends HTMLElement {
       <slot></slot>
       <div class="footer-wrap">
         <footer>
-          <a href="${baseURL}" aria-label="Home"><span class="logo"></span></a>
+          <div class="logo-wrap"><a href="${baseURL}" aria-label="Home"><span class="logo"></span></a></div>
           <span><a href="${baseURL}">Trois Sœurs</a> · Built together in Kansas City, Missouri</span>
           <nav>
             <a href="${baseURL}#about">About</a>
@@ -82,6 +112,13 @@ export class PageShell extends HTMLElement {
   }
 
   connectedCallback() {
+    if (!document.documentElement.style.getPropertyValue("--stroke-hue")) {
+      const hues = [0, 36, 72, 108, 144, 180, 216, 252, 288, 324];
+      document.documentElement.style.setProperty(
+        "--stroke-hue",
+        hues[Math.floor(Math.random() * hues.length)] + "deg",
+      );
+    }
     const count = this.querySelectorAll("page-section").length;
     const theme = count % 2 === 1 ? "light" : "dark";
     this.shadowRoot.querySelector(".footer-wrap").classList.add(theme);
