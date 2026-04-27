@@ -176,7 +176,7 @@
           <input
             type="text"
             name="email"
-            placeholder="Where we can reach you"
+            placeholder="Where we can reach you (email or phone)"
             required
           />
           <textarea
@@ -196,6 +196,17 @@
     const form = document.getElementById("contact-form");
     const heading = document.getElementById("contact-heading");
     const intro = document.getElementById("contact-intro");
+
+    form.querySelectorAll("input, textarea").forEach((el) => {
+      el.addEventListener("invalid", () => {
+        el.setCustomValidity(
+          el.name === "email"
+            ? "We'll need a way to reach you."
+            : "Tell us a little something.",
+        );
+      });
+      el.addEventListener("input", () => el.setCustomValidity(""));
+    });
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
