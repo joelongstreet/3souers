@@ -63,6 +63,7 @@ export class PageShell extends HTMLElement {
           <span><a href="${baseURL}">Trois Sœurs</a> · Built together in Kansas City, Missouri</span>
           <nav>
             <a href="${baseURL}#about">About</a>
+            <a href="${baseURL}#people">Us</a>
             <a href="${baseURL}#contact">Contact</a>
           </nav>
         </footer>
