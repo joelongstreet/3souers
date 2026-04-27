@@ -14,7 +14,8 @@ export class PageCard extends HTMLElement {
     shadow.innerHTML = `
       <style>
         :host {
-          display: block;
+          display: flex;
+          flex-direction: column;
           border-bottom: 1px solid var(--section-color, var(--ink));
           padding-bottom: 1rem !important;
         }
@@ -33,10 +34,11 @@ export class PageCard extends HTMLElement {
         a:hover .img img { transform: scale(1.03); }
         h4 { font-size: 1.15rem; font-weight: 600; margin: 0; }
         h5 { font-size: 1rem; opacity: 0.7; font-style: italic; font-weight: normal; margin: 0; line-height: 1rem; }
-        p  { font-size: 1rem; line-height: 1.5rem; margin: 0.5rem 0 0; }
+        p  { font-size: 1rem; line-height: 1.5rem; margin: 0.5rem 0 1.5rem; }
         .cta {
           display: inline-block;
-          margin-top: 0.75rem;
+          margin-top: auto;
+          padding-top: 0.75rem;
           padding: 0.25rem 0.75rem;
           background: var(--highlight);
           color: var(--cream);
