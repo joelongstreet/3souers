@@ -99,7 +99,7 @@ export class PageShell extends HTMLElement {
       <slot></slot>
       <div class="footer-wrap">
         <footer>
-          <div class="logo-wrap"><a href="${baseURL}" aria-label="Home"><span class="logo"></span></a></div>
+          <div class="logo-wrap"><a href="/#" aria-label="Home"><span class="logo"></span></a></div>
           <span><a href="${baseURL}">Trois Sœurs</a> · Built together in Kansas City, Missouri</span>
           <nav>
             <a href="${baseURL}#about">About</a>
