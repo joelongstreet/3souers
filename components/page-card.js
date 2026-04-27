@@ -1,3 +1,5 @@
+const baseURL = new URL("..", import.meta.url).href;
+
 export class PageCard extends HTMLElement {
   constructor() {
     super();
@@ -43,6 +45,18 @@ export class PageCard extends HTMLElement {
           border-radius: var(--btn-radius, 4px);
           box-shadow: var(--btn-shadow, 2px 2px 0 rgba(0, 0, 0, 0.2));
           letter-spacing: var(--btn-letter-spacing, 0.04em);
+          filter: hue-rotate(var(--btn-hue, 0deg));
+          position: relative;
+          overflow: hidden;
+        }
+        .cta::before {
+          content: "";
+          position: absolute;
+          inset: -15%;
+          background: url('${baseURL}paint-stroke.png') center / cover no-repeat;
+          mix-blend-mode: soft-light;
+          opacity: 0.8;
+          pointer-events: none;
         }
         .cta:hover { opacity: 0.85; }
       </style>

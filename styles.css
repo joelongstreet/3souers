@@ -152,6 +152,18 @@ button {
   border-radius: var(--btn-radius);
   box-shadow: var(--btn-shadow);
   letter-spacing: var(--btn-letter-spacing);
+  filter: hue-rotate(var(--btn-hue, 0deg));
+  position: relative;
+  overflow: hidden;
+}
+button::before {
+  content: "";
+  position: absolute;
+  inset: -15%;
+  background: url('./paint-stroke.png') center / cover no-repeat;
+  mix-blend-mode: soft-light;
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 .btn {
@@ -165,6 +177,18 @@ button {
   box-shadow: var(--btn-shadow);
   letter-spacing: var(--btn-letter-spacing);
   margin-top: 1rem;
+  filter: hue-rotate(var(--btn-hue, 0deg));
+  position: relative;
+  overflow: hidden;
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: -15%;
+  background: url('./paint-stroke.png') center / cover no-repeat;
+  mix-blend-mode: soft-light;
+  opacity: 0.6;
+  pointer-events: none;
 }
 .btn:hover {
   opacity: 0.85;

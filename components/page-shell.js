@@ -30,7 +30,7 @@ export class PageShell extends HTMLElement {
         header h1::before {
           content: "";
           position: absolute;
-          inset: -0.4em -3em;
+          inset: -0.7em -3em;
           background: url('${baseURL}paint-stroke.png') center / 100% 100% no-repeat;
           filter: hue-rotate(var(--stroke-hue, 0deg));
           z-index: -1;

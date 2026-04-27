@@ -29,7 +29,10 @@
     <link rel="stylesheet" href="styles.css" />
     <script>
       const _hues = [0, 36, 72, 108, 144, 180, 216, 252, 288, 324];
-      document.documentElement.style.setProperty('--stroke-hue', _hues[Math.floor(Math.random() * _hues.length)] + 'deg');
+      document.documentElement.style.setProperty(
+        "--stroke-hue",
+        _hues[Math.floor(Math.random() * _hues.length)] + "deg",
+      );
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="module" src="./components/index.js"></script>
@@ -128,14 +131,14 @@
             image="./1/poster.png"
             title="For Us"
             description="Lives in our front yard. Started as ours, but the neighborhood had other ideas."
-            cta="Our Holly St. story"
+            cta="Our Holly St. Story"
           ></page-card>
           <page-card
             href="/2"
             image="./2/poster.png"
             title="For Académie Lafayette"
             description="Built from leftovers, which feels right for a school that teaches kids to make something out of anything."
-            cta="Our school, our story"
+            cta="Our School, Our Story"
           ></page-card>
           <page-card
             href="/3"
@@ -149,7 +152,7 @@
             image="./4/poster.png"
             title="For Grandma Mary and Papa Mark"
             description="For two grandparents who somehow always know exactly how to meet each kid where they are."
-            cta="Meet the grandparents"
+            cta="Meet the Grandparents"
           ></page-card>
         </div>
       </page-section>
