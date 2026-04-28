@@ -10,7 +10,6 @@ export class PageShell extends HTMLElement {
         header {
           background: var(--ink-soft);
           color: var(--ink-soft);
-          border-bottom: 1px solid var(--ink);
           font-family: "Shadows Into Light", cursive;
         }
         header a {
@@ -47,10 +46,8 @@ export class PageShell extends HTMLElement {
           display: flex;
           flex-direction: column;
           align-items: center;
-          padding: 1.5rem;
           padding-bottom: 1rem;
           font-size: 0.875rem;
-          gap: 1rem;
         }
         footer a {
           color: inherit;
@@ -59,6 +56,7 @@ export class PageShell extends HTMLElement {
         footer nav {
           display: flex;
           gap: 1.5rem;
+          margin-bottom: 2rem;
         }
         .logo-wrap {
           position: relative;
@@ -69,9 +67,10 @@ export class PageShell extends HTMLElement {
         .logo-wrap::before {
           content: "";
           position: absolute;
-          inset: -1.5em -8em;
+          inset: -3em -4em;
           background: url('${baseURL}paint-stroke.png') center / 100% 100% no-repeat;
           filter: hue-rotate(var(--stroke-hue, 0deg));
+          transform: translateX(-0.5rem) translateY(0.5rem) rotate(-10deg);
           z-index: 0;
         }
         .logo-wrap a {
@@ -100,7 +99,7 @@ export class PageShell extends HTMLElement {
       <div class="footer-wrap">
         <footer>
           <div class="logo-wrap"><a href="/#" aria-label="Home"><span class="logo"></span></a></div>
-          <span><a href="${baseURL}">Trois Sœurs</a> · Built together in Kansas City, Missouri</span>
+          <span style="margin-top: 2rem;"><a href="${baseURL}">Trois Sœurs</a> · Built together in Kansas City, Missouri</span>
           <nav>
             <a href="${baseURL}#about">About</a>
             <a href="${baseURL}#people">Family</a>
