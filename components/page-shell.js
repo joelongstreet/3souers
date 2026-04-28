@@ -20,11 +20,17 @@ export class PageShell extends HTMLElement {
           color: inherit;
           text-decoration: none;
         }
+        header .number {
+          font-size: 3.5rem;
+          padding-right: 0.25rem;
+        }
         header h1 {
           font-size: 2.5rem;
           margin: 0;
           position: relative;
           z-index: 1;
+          display: inline-flex;
+          align-items: center;
         }
         header h1::before {
           content: "";
@@ -94,7 +100,7 @@ export class PageShell extends HTMLElement {
           -webkit-mask-position: center;
         }
       </style>
-      ${noHeader ? "" : `<header><a href="${baseURL}"><h1>Trois Sœurs</h1></a></header>`}
+      ${noHeader ? "" : `<header><a href="${baseURL}"><h1><span class="number">3</span>sœurs</h1></a></header>`}
       <slot></slot>
       <div class="footer-wrap">
         <footer>
