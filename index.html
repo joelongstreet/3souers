@@ -6,16 +6,17 @@
     <title>3 Sœurs: Built together</title>
     <meta
       name="description"
-      content="A family building little libraries in Kansas City."
+      content="Building little libraries in Kansas City, as a family."
     />
     <meta property="og:title" content="3 Sœurs: Built together" />
     <meta
       property="og:description"
-      content="A family building little libraries in Kansas City."
+      content="Building little libraries in Kansas City, as a family."
     />
     <meta property="og:image" content="https://3soeurs.net/share.jpg" />
     <meta property="og:url" content="https://3soeurs.net/" />
     <meta property="og:type" content="website" />
+
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/share.jpg" type="image/jpeg" />
 
@@ -38,7 +39,7 @@
         overflow: hidden;
         display: flex;
         align-items: flex-start;
-        justify-content: flex-end;
+        justify-content: flex-start;
         padding: 2rem;
         background: url('./hero.jpg') center / cover no-repeat;
       }
@@ -60,7 +61,7 @@
         z-index: 1;
         padding: 2rem 4rem;
         margin-top: -2rem;
-        margin-right: -5rem;
+        margin-left: -5rem;
         background: url("./paint-stroke.png") center / 100% 100% no-repeat;
         filter: hue-rotate(var(--stroke-hue, 0deg));
         mask-image: url("./logo.svg"), linear-gradient(black, black);
@@ -124,20 +125,6 @@
         </p>
         <p>Each one ends up belonging to wherever it lands.</p>
         <div class="grid">
-          <page-card
-            href="/1"
-            image="./1/poster.jpg"
-            title="For Us"
-            description="Lives in our front yard. Started as ours, but the neighborhood had other ideas."
-            cta="Life on Holly Street"
-          ></page-card>
-          <page-card
-            href="/2"
-            image="./2/poster.jpg"
-            title="For Académie Lafayette"
-            description="Built from leftovers, which feels right for a school that teaches kids to make something out of anything."
-            cta="Our School, Our Story"
-          ></page-card>
           <!-- <page-card
             href="/3"
             image="./3/poster.png"
@@ -152,6 +139,20 @@
             description="For two grandparents who somehow always know exactly how to meet each kid where they are."
             cta="Meet the Grandparents"
           ></page-card> -->
+          <page-card
+            href="/1"
+            image="./1/poster.jpg"
+            title="For Us"
+            description="Lives in our front yard. Started as ours, but the neighborhood had other ideas."
+            cta="Life on Holly Street"
+          ></page-card>
+          <page-card
+            href="/2"
+            image="./2/poster.jpg"
+            title="For Académie Lafayette"
+            description="Built from leftovers, which feels right for a school that teaches kids to make something out of anything."
+            cta="Our School, Our Story"
+          ></page-card>
         </div>
       </page-section>
 
