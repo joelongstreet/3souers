@@ -113,7 +113,7 @@ page-section:nth-of-type(even) {
 }
 
 form {
-  max-width: 45rem;
+  max-width: 100%;
   margin-top: 2rem;
 }
 

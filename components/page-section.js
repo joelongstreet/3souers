@@ -13,7 +13,7 @@ export class PageSection extends HTMLElement {
           padding: 4rem 2rem;
         }
         .wrap {
-          max-width: 60rem;
+          max-width: 50rem;
           margin: 0 auto;
         }
       </style>
