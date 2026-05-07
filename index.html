@@ -21,12 +21,9 @@
     <link rel="icon" href="/share.jpg" type="image/jpeg" />
 
     <link rel="stylesheet" href="styles.css" />
-    <script>
-      const _hues = [0, 36, 72, 108, 144, 180, 216, 252, 288, 324];
-      document.documentElement.style.setProperty(
-        "--stroke-hue",
-        _hues[Math.floor(Math.random() * _hues.length)] + "deg",
-      );
+    <script type="module">
+      import { pickHue } from "./components/utils.js";
+      document.documentElement.style.setProperty("--stroke-hue", pickHue());
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="module" src="./components/index.js"></script>

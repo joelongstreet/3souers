@@ -1,3 +1,5 @@
+import { pickHue } from "./utils.js";
+
 const baseURL = new URL("..", import.meta.url).href;
 
 export class PageShell extends HTMLElement {
@@ -118,11 +120,7 @@ export class PageShell extends HTMLElement {
 
   connectedCallback() {
     if (!document.documentElement.style.getPropertyValue("--stroke-hue")) {
-      const hues = [0, 36, 72, 108, 144, 180, 216, 252, 288, 324];
-      document.documentElement.style.setProperty(
-        "--stroke-hue",
-        hues[Math.floor(Math.random() * hues.length)] + "deg",
-      );
+        document.documentElement.style.setProperty("--stroke-hue", pickHue());
     }
     const count = this.querySelectorAll("page-section").length;
     const theme = count % 2 === 1 ? "light" : "dark";
