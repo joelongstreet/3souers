@@ -3,6 +3,7 @@ import "./page-shell.js";
 import "./page-section.js";
 import "./page-card.js";
 import "./page-poster.js";
+import "./project-contact.js";
 
 window.addEventListener("load", () => {
   document.documentElement.style.scrollBehavior = "smooth";
