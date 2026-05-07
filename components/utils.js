@@ -69,8 +69,8 @@ export const baseCSS = `
   h1 { font-size: 3rem; }
   h2 { font-size: 1.75rem; line-height: 2.25rem; }
   h3 { font-size: 1.5rem; }
-  h4 { font-size: 1.15rem; font-weight: 600; }
-  h5 { font-size: 1.15rem; opacity: 0.7; font-style: italic; font-weight: normal; }
+  h4 { font-size: 1.15rem; font-weight: 600; margin-bottom: 0.5rem; }
+  h5 { font-size: 1.15rem; opacity: 0.7; font-style: italic; font-weight: normal; margin-top: -0.5rem; margin-bottom: 1rem; }
   p { max-width: 45rem; font-size: 1.15rem; margin-bottom: 1rem; }
   form { max-width: 100%; margin-top: 2rem; }
 `;
