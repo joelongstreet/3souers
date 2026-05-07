@@ -1,4 +1,4 @@
-import { ctaCSS } from "./utils.js";
+import { baseCSS, ctaCSS } from "./utils.js";
 
 export class PageCard extends HTMLElement {
   constructor() {
@@ -32,9 +32,7 @@ export class PageCard extends HTMLElement {
         }
         a { display: block; }
         a:hover .img img { transform: scale(1.03); }
-        h4 { font-size: 1.15rem; font-weight: 400; margin: 0; font-family: "Fraunces", serif;}
-        h5 { font-size: 1rem; opacity: 0.7; font-weight: 200; margin: 0; line-height: 1rem; font-family: "Fraunces", serif; }
-        p  { font-size: 1rem; line-height: 1.5rem; margin: 0.5rem 0 1.5rem; }
+        ${baseCSS}
         ${ctaCSS}
       </style>
       ${href ? `<a href="${href}">${img}</a>` : img}

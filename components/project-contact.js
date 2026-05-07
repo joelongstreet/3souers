@@ -1,4 +1,4 @@
-import { pickHue, buttonCSS, formInputCSS } from "./utils.js";
+import { pickHue, baseCSS, buttonCSS, formInputCSS } from "./utils.js";
 
 class ProjectContact extends HTMLElement {
   connectedCallback() {
@@ -8,23 +8,7 @@ class ProjectContact extends HTMLElement {
         :host {
           display: block;
         }
-        h2 {
-          font-family: "Fraunces", serif;
-          font-weight: 400;
-          font-size: 1.75rem;
-          line-height: 2.25rem;
-          margin-bottom: 3rem;
-          margin-top: 0;
-        }
-        p {
-          font-size: 1.15rem;
-          margin-bottom: 1rem;
-          max-width: 45rem;
-        }
-        form {
-          max-width: 100%;
-          margin-top: 2rem;
-        }
+        ${baseCSS}
         ${formInputCSS}
         ${buttonCSS}
       </style>
