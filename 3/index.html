@@ -13,19 +13,30 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/share.jpg" type="image/jpeg" />
     <link rel="stylesheet" href="../styles.css" />
-    <style>:root { --stroke-hue: 108deg; }</style>
+    <style>
+      :root {
+        --stroke-hue: 108deg;
+      }
+    </style>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DJ9C7YKVN7"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DJ9C7YKVN7"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
+      function gtag() {
+        dataLayer.push(arguments);
+      }
       gtag("js", new Date());
       gtag("config", "G-DJ9C7YKVN7");
     </script>
   </head>
   <body>
     <header class="site-header">
-      <a href="/"><h1><span class="number">3</span>sœurs</h1></a>
+      <a href="/"
+        ><h1><span class="number">3</span>sœurs</h1></a
+      >
     </header>
     <div class="page-poster"><img src="./alternate.jpg" alt="" /></div>
     <section class="page-section">
@@ -51,27 +62,50 @@
           gives. A small thing in a quiet spot, where someone might stop and
           find exactly what they didn't know they were looking for.
         </p>
-        <a class="btn" href="/#libraries" style="--btn-hue: 324deg">See all our little libraries »</a>
+        <a class="btn" href="/#libraries" style="--btn-hue: 324deg"
+          >See all our little libraries »</a
+        >
+      </div>
+    </section>
+    <section class="page-section">
+      <div class="page-section-inner">
+        <h2>Memories</h2>
+        <!-- Add memories here: <h4>Name</h4><p>Message</p> -->
       </div>
     </section>
     <section class="page-section">
       <div class="page-section-inner">
         <h2 id="memory-heading">What should this library remember?</h2>
-        <p id="memory-intro">Leave a note or share a memory. We'd love to know what this library means to you.</p>
+        <p id="memory-intro">
+          Leave a note or share a memory. We'd love to know what this library
+          means to you.
+        </p>
         <form id="memory-form">
           <input type="text" name="name" placeholder="Name (optional)" />
-          <textarea rows="4" name="message" placeholder="What you're thinking about" required></textarea>
-          <button type="submit" style="--btn-hue: 216deg">Leave your mark</button>
+          <textarea
+            rows="4"
+            name="message"
+            placeholder="What you're thinking about"
+            required
+          ></textarea>
+          <button type="submit" style="--btn-hue: 216deg">
+            Leave your mark
+          </button>
         </form>
       </div>
     </section>
     <div class="page-poster"><img src="./poster.jpg" alt="" /></div>
     <div class="page-poster"><img src="./alternate-3.jpg" alt="" /></div>
     <div class="page-poster"><img src="./alternate-2.jpg" alt="" /></div>
-    <div class="footer-wrap dark">
+    <div class="footer-wrap light">
       <footer>
-        <div class="logo-wrap"><a href="/" aria-label="Home"><span class="logo"></span></a></div>
-        <span style="margin-top: 2rem;"><a href="/">Trois Sœurs</a> · Built together in Kansas City, Missouri</span>
+        <div class="logo-wrap">
+          <a href="/" aria-label="Home"><span class="logo"></span></a>
+        </div>
+        <span style="margin-top: 2rem"
+          ><a href="/">Trois Sœurs</a> · Built together in Kansas City,
+          Missouri</span
+        >
         <nav>
           <a href="/#about">About</a>
           <a href="/#people">Family</a>
@@ -95,21 +129,23 @@
         const btn = form.querySelector("button");
         btn.disabled = true;
         btn.textContent = "Sending...";
-        emailjs.send("3Soeurs", "template_61eezn8", {
-          project_id: "3",
-          email: form.querySelector('[name="name"]').value || "Anonymous",
-          message: form.querySelector('[name="message"]').value,
-        }).then(
-          function () {
-            form.style.display = "none";
-            intro.style.display = "none";
-            heading.textContent = "Remembered. Thank you.";
-          },
-          function () {
-            btn.disabled = false;
-            btn.textContent = "Leave your mark";
-          }
-        );
+        emailjs
+          .send("3Soeurs", "template_61eezn8", {
+            project_id: "3",
+            email: form.querySelector('[name="name"]').value || "Anonymous",
+            message: form.querySelector('[name="message"]').value,
+          })
+          .then(
+            function () {
+              form.style.display = "none";
+              intro.style.display = "none";
+              heading.textContent = "Remembered. Thank you.";
+            },
+            function () {
+              btn.disabled = false;
+              btn.textContent = "Leave your mark";
+            },
+          );
       });
     </script>
   </body>

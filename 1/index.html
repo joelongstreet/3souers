@@ -4,28 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>3 Sœurs: Holly St.</title>
-    <meta name="description" content="Our family's gift to Holly St. - one book at a time." />
+    <meta
+      name="description"
+      content="Our family's gift to Holly St. - one book at a time."
+    />
     <meta property="og:title" content="3 Sœurs: Holly St." />
-    <meta property="og:description" content="Our family's gift to Holly St. - one book at a time." />
+    <meta
+      property="og:description"
+      content="Our family's gift to Holly St. - one book at a time."
+    />
     <meta property="og:image" content="https://3soeurs.net/1/share.jpg" />
     <meta property="og:url" content="https://3soeurs.net/1/" />
     <meta property="og:type" content="website" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="./share.jpg" type="image/jpeg" />
     <link rel="stylesheet" href="../styles.css" />
-    <style>:root { --stroke-hue: 36deg; }</style>
+    <style>
+      :root {
+        --stroke-hue: 36deg;
+      }
+    </style>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DJ9C7YKVN7"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DJ9C7YKVN7"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
+      function gtag() {
+        dataLayer.push(arguments);
+      }
       gtag("js", new Date());
       gtag("config", "G-DJ9C7YKVN7");
     </script>
   </head>
   <body>
     <header class="site-header">
-      <a href="/"><h1><span class="number">3</span>sœurs</h1></a>
+      <a href="/"
+        ><h1><span class="number">3</span>sœurs</h1></a
+      >
     </header>
     <div class="page-poster"><img src="./alternate.jpg" alt="" /></div>
     <section class="page-section">
@@ -53,17 +70,40 @@
           look. Someone sitting on the wall for a minute. Someone taking
           something, or leaving something behind.
         </p>
-        <a class="btn" href="/#libraries" style="--btn-hue: 252deg">See all our little libraries »</a>
+        <a class="btn" href="/#libraries" style="--btn-hue: 252deg"
+          >See all our little libraries »</a
+        >
+      </div>
+    </section>
+    <section class="page-section">
+      <div class="page-section-inner">
+        <h2>Memories</h2>
+        <h4>Nora</h4>
+        <p>Found the exact book I'd been meaning to read for a year. Left two in its place. Came back the next week to see if anything new had shown up. Something had.</p>
+        <h4>The Martins</h4>
+        <p>Our daughter made us stop every morning on the way to school for two weeks straight. She finally found one she wanted. We let her keep it.</p>
+        <h4>Anonymous</h4>
+        <p>Walked past this for months before I actually stopped. Finally did on a Tuesday in November. Took home a mystery novel I finished in a weekend. Thank you for building this.</p>
       </div>
     </section>
     <section class="page-section">
       <div class="page-section-inner">
         <h2 id="memory-heading">What should this library remember?</h2>
-        <p id="memory-intro">Leave a note or share a memory. We'd love to know what this library means to you.</p>
+        <p id="memory-intro">
+          Leave a note or share a memory. We'd love to know what this library
+          means to you.
+        </p>
         <form id="memory-form">
           <input type="text" name="name" placeholder="Name (optional)" />
-          <textarea rows="4" name="message" placeholder="What you're thinking about" required></textarea>
-          <button type="submit" style="--btn-hue: 108deg">Leave your mark</button>
+          <textarea
+            rows="4"
+            name="message"
+            placeholder="What you're thinking about"
+            required
+          ></textarea>
+          <button type="submit" style="--btn-hue: 108deg">
+            Leave your mark
+          </button>
         </form>
       </div>
     </section>
@@ -74,8 +114,13 @@
     <div class="page-poster"><img src="./alternate-2.jpg" alt="" /></div>
     <div class="footer-wrap dark">
       <footer>
-        <div class="logo-wrap"><a href="/" aria-label="Home"><span class="logo"></span></a></div>
-        <span style="margin-top: 2rem;"><a href="/">Trois Sœurs</a> · Built together in Kansas City, Missouri</span>
+        <div class="logo-wrap">
+          <a href="/" aria-label="Home"><span class="logo"></span></a>
+        </div>
+        <span style="margin-top: 2rem"
+          ><a href="/">Trois Sœurs</a> · Built together in Kansas City,
+          Missouri</span
+        >
         <nav>
           <a href="/#about">About</a>
           <a href="/#people">Family</a>
@@ -99,21 +144,23 @@
         const btn = form.querySelector("button");
         btn.disabled = true;
         btn.textContent = "Sending...";
-        emailjs.send("3Soeurs", "template_61eezn8", {
-          project_id: "1",
-          email: form.querySelector('[name="name"]').value || "Anonymous",
-          message: form.querySelector('[name="message"]').value,
-        }).then(
-          function () {
-            form.style.display = "none";
-            intro.style.display = "none";
-            heading.textContent = "Remembered. Thank you.";
-          },
-          function () {
-            btn.disabled = false;
-            btn.textContent = "Leave your mark";
-          }
-        );
+        emailjs
+          .send("3Soeurs", "template_61eezn8", {
+            project_id: "1",
+            email: form.querySelector('[name="name"]').value || "Anonymous",
+            message: form.querySelector('[name="message"]').value,
+          })
+          .then(
+            function () {
+              form.style.display = "none";
+              intro.style.display = "none";
+              heading.textContent = "Remembered. Thank you.";
+            },
+            function () {
+              btn.disabled = false;
+              btn.textContent = "Leave your mark";
+            },
+          );
       });
     </script>
   </body>
