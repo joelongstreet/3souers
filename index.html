@@ -4,29 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>3 Sœurs: Built together</title>
-    <meta
-      name="description"
-      content="Building little libraries in Kansas City, as a family."
-    />
+    <meta name="description" content="Building little libraries in Kansas City, as a family." />
     <meta property="og:title" content="3 Sœurs: Built together" />
-    <meta
-      property="og:description"
-      content="Building little libraries in Kansas City, as a family."
-    />
+    <meta property="og:description" content="Building little libraries in Kansas City, as a family." />
     <meta property="og:image" content="https://3soeurs.net/share.jpg" />
     <meta property="og:url" content="https://3soeurs.net/" />
     <meta property="og:type" content="website" />
-
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/share.jpg" type="image/jpeg" />
-
     <link rel="stylesheet" href="styles.css" />
-    <script type="module">
-      import { pickHue } from "./components/utils.js";
-      document.documentElement.style.setProperty("--stroke-hue", pickHue());
-    </script>
+    <style>:root { --stroke-hue: 144deg; }</style>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="module" src="./components/index.js"></script>
     <style>
       .hero {
         box-sizing: border-box;
@@ -52,7 +40,6 @@
         filter: sepia(20%);
         z-index: 0;
       }
-
       .hero-logo {
         position: relative;
         z-index: 1;
@@ -68,16 +55,12 @@
         background: url("./paint-stroke.png") center / 100% 100% no-repeat;
         mask-image: url("./logo.svg"), linear-gradient(black, black);
         mask-composite: subtract;
-        mask-size:
-          auto 4rem,
-          100%;
+        mask-size: auto 4rem, 100%;
         mask-repeat: no-repeat, no-repeat;
         mask-position: center, center;
         -webkit-mask-image: url("./logo.svg"), linear-gradient(black, black);
         -webkit-mask-composite: destination-out;
-        -webkit-mask-size:
-          auto 4rem,
-          100%;
+        -webkit-mask-size: auto 4rem, 100%;
         -webkit-mask-repeat: no-repeat, no-repeat;
         -webkit-mask-position: center, center;
       }
@@ -102,8 +85,14 @@
         visibility: hidden;
       }
     </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DJ9C7YKVN7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "G-DJ9C7YKVN7");
+    </script>
   </head>
-
   <body>
     <div class="hero">
       <video autoplay muted loop playsinline poster="./hero.jpg">
@@ -111,8 +100,8 @@
       </video>
       <a class="hero-logo" href="#about"><span class="logo"></span></a>
     </div>
-    <page-shell no-header>
-      <page-section id="about">
+    <section class="page-section" id="about">
+      <div class="page-section-inner">
         <h1>Built together.</h1>
         <p>
           Trois Sœurs is French for three sisters. We're Jane, Ruby, and Lucy,
@@ -120,15 +109,15 @@
           We build things together, out of a little shop, with help from friends
           when we need it.
         </p>
-
         <p>
           Something happens when you build things with your hands alongside
           people you love. We're still figuring out exactly what it is, but we
           keep showing up anyway.
         </p>
-      </page-section>
-
-      <page-section id="libraries">
+      </div>
+    </section>
+    <section class="page-section" id="libraries">
+      <div class="page-section-inner">
         <h2>What we're currently making</h2>
         <p>
           Right now, it's little libraries. The kind you find on a corner and
@@ -138,38 +127,43 @@
         </p>
         <p>Each one ends up belonging to wherever it lands.</p>
         <div class="grid">
-          <page-card
-            href="/3"
-            image="./3/poster.jpg"
-            title="For Louanne Hein"
-            description="A small thank-you to the person who taught Ruby that art is a feeling first and a skill second."
-            cta="Meet Louanne"
-          ></page-card>
-          <page-card
-            href="/4"
-            image="./4/poster.jpg"
-            title="For Grandma Mary and Papa Mark"
-            description="For two grandparents who somehow always know exactly how to meet each kid where they are."
-            cta="Meet the Grandparents"
-          ></page-card>
-          <page-card
-            href="/1"
-            image="./1/poster.jpg"
-            title="For Us"
-            description="Lives in our front yard. Started as ours, but the neighborhood had other ideas."
-            cta="Life on Holly Street"
-          ></page-card>
-          <page-card
-            href="/2"
-            image="./2/poster.jpg"
-            title="For Académie Lafayette"
-            description="Built from leftovers, which feels right for a school that teaches kids to make something out of anything."
-            cta="Our School, Our Story"
-          ></page-card>
+          <div class="page-card">
+            <a href="/3">
+              <div class="img"><img src="./3/poster.jpg" alt="For Louanne Hein" /></div>
+            </a>
+            <h4>For Louanne Hein</h4>
+            <p>A small thank-you to the person who taught Ruby that art is a feeling first and a skill second.</p>
+            <a class="cta" href="/3" style="--btn-hue: 108deg">Meet Louanne »</a>
+          </div>
+          <div class="page-card">
+            <a href="/4">
+              <div class="img"><img src="./4/poster.jpg" alt="For Grandma Mary and Papa Mark" /></div>
+            </a>
+            <h4>For Grandma Mary and Papa Mark</h4>
+            <p>For two grandparents who somehow always know exactly how to meet each kid where they are.</p>
+            <a class="cta" href="/4" style="--btn-hue: 216deg">Meet the Grandparents »</a>
+          </div>
+          <div class="page-card">
+            <a href="/1">
+              <div class="img"><img src="./1/poster.jpg" alt="For Us" /></div>
+            </a>
+            <h4>For Us</h4>
+            <p>Lives in our front yard. Started as ours, but the neighborhood had other ideas.</p>
+            <a class="cta" href="/1" style="--btn-hue: 0deg">Life on Holly Street »</a>
+          </div>
+          <div class="page-card">
+            <a href="/2">
+              <div class="img"><img src="./2/poster.jpg" alt="For Académie Lafayette" /></div>
+            </a>
+            <h4>For Académie Lafayette</h4>
+            <p>Built from leftovers, which feels right for a school that teaches kids to make something out of anything.</p>
+            <a class="cta" href="/2" style="--btn-hue: 324deg">Our School, Our Story »</a>
+          </div>
         </div>
-      </page-section>
-
-      <page-section id="people">
+      </div>
+    </section>
+    <section class="page-section" id="people">
+      <div class="page-section-inner">
         <h2>How we work together</h2>
         <p>
           We have roles, loosely. Mostly we just do whatever needs doing. Some
@@ -177,60 +171,66 @@
           things twice and cutting once, and it comes out exactly right.
         </p>
         <p>It shifts around. That's kind of the whole point.</p>
-
         <div class="grid">
-          <page-card
-            href="/people/jane"
-            image="./people/jane/poster.jpg"
-            title="Jane"
-            subtitle="Storytelling &amp; Sales"
-            description="Tells the story. Finds the people. Gets things out the door."
-            cta="Hard Things"
-          ></page-card>
-          <page-card
-            href="/people/ruby"
-            image="./people/ruby/poster.jpg"
-            title="Ruby"
-            subtitle="Design &amp; Color"
-            description="Has strong opinions about color. They are almost always right."
-            cta="Feeling Proud"
-          ></page-card>
-          <page-card
-            href="/people/lucy"
-            image="./people/lucy/poster.jpg"
-            title="Lucy"
-            subtitle="Construction &amp; Counting"
-            description="Builds things, counts things, makes sure they hold together."
-            cta="Just Try"
-          ></page-card>
-          <page-card
-            href="/people/mommy"
-            image="./people/mommy/poster.jpg"
-            title="Mommy"
-            subtitle="Operations &amp; Photography"
-            description="Keeps the whole thing from going sideways."
-            cta="Makes it Work"
-          ></page-card>
-          <page-card
-            href="/people/daddy"
-            image="./people/daddy/poster.jpg"
-            title="Daddy"
-            subtitle="Architect &amp; Builder"
-            description="Designs it, builds it, probably rebuilds it and then rebuilds it again."
-            cta="Work Together"
-          ></page-card>
-          <page-card
-            href="/people/rufus"
-            image="./people/rufus/poster.jpg"
-            title="Rufus"
-            subtitle="Chief Morale Officer"
-            description="Contributes nothing. Improves everything."
-            cta="Rufus Report"
-          ></page-card>
+          <div class="page-card">
+            <a href="/people/jane">
+              <div class="img"><img src="./people/jane/poster.jpg" alt="Jane" /></div>
+            </a>
+            <h4>Jane</h4>
+            <h5>Storytelling &amp; Sales</h5>
+            <p>Tells the story. Finds the people. Gets things out the door.</p>
+            <a class="cta" href="/people/jane" style="--btn-hue: 36deg">Hard Things »</a>
+          </div>
+          <div class="page-card">
+            <a href="/people/ruby">
+              <div class="img"><img src="./people/ruby/poster.jpg" alt="Ruby" /></div>
+            </a>
+            <h4>Ruby</h4>
+            <h5>Design &amp; Color</h5>
+            <p>Has strong opinions about color. They are almost always right.</p>
+            <a class="cta" href="/people/ruby" style="--btn-hue: 180deg">Feeling Proud »</a>
+          </div>
+          <div class="page-card">
+            <a href="/people/lucy">
+              <div class="img"><img src="./people/lucy/poster.jpg" alt="Lucy" /></div>
+            </a>
+            <h4>Lucy</h4>
+            <h5>Construction &amp; Counting</h5>
+            <p>Builds things, counts things, makes sure they hold together.</p>
+            <a class="cta" href="/people/lucy" style="--btn-hue: 252deg">Just Try »</a>
+          </div>
+          <div class="page-card">
+            <a href="/people/mommy">
+              <div class="img"><img src="./people/mommy/poster.jpg" alt="Mommy" /></div>
+            </a>
+            <h4>Mommy</h4>
+            <h5>Operations &amp; Photography</h5>
+            <p>Keeps the whole thing from going sideways.</p>
+            <a class="cta" href="/people/mommy" style="--btn-hue: 72deg">Makes it Work »</a>
+          </div>
+          <div class="page-card">
+            <a href="/people/daddy">
+              <div class="img"><img src="./people/daddy/poster.jpg" alt="Daddy" /></div>
+            </a>
+            <h4>Daddy</h4>
+            <h5>Architect &amp; Builder</h5>
+            <p>Designs it, builds it, probably rebuilds it and then rebuilds it again.</p>
+            <a class="cta" href="/people/daddy" style="--btn-hue: 288deg">Work Together »</a>
+          </div>
+          <div class="page-card">
+            <a href="/people/rufus">
+              <div class="img"><img src="./people/rufus/poster.jpg" alt="Rufus" /></div>
+            </a>
+            <h4>Rufus</h4>
+            <h5>Chief Morale Officer</h5>
+            <p>Contributes nothing. Improves everything.</p>
+            <a class="cta" href="/people/rufus" style="--btn-hue: 144deg">Rufus Report »</a>
+          </div>
         </div>
-      </page-section>
-
-      <page-section id="contact">
+      </div>
+    </section>
+    <section class="page-section" id="contact">
+      <div class="page-section-inner">
         <h2 id="contact-heading">An open door</h2>
         <p id="contact-intro">
           If you want a little library for your yard, your school, or somewhere
@@ -250,46 +250,57 @@
             placeholder="What you're thinking about"
             required
           ></textarea>
-          <button type="submit">Let's see where this goes</button>
+          <button type="submit" style="--btn-hue: 36deg">Let's see where this goes</button>
         </form>
-      </page-section>
-    </page-shell>
-  </body>
-  <script type="module">
-    emailjs.init({ publicKey: "bj2L_S3nwdlIeg191" });
+      </div>
+    </section>
+    <div class="footer-wrap dark">
+      <footer>
+        <div class="logo-wrap"><a href="/" aria-label="Home"><span class="logo"></span></a></div>
+        <span style="margin-top: 2rem;"><a href="/">Trois Sœurs</a> · Built together in Kansas City, Missouri</span>
+        <nav>
+          <a href="/#about">About</a>
+          <a href="/#people">Family</a>
+          <a href="/#contact">Contact</a>
+        </nav>
+      </footer>
+    </div>
+    <script type="module">
+      emailjs.init({ publicKey: "bj2L_S3nwdlIeg191" });
 
-    const form = document.getElementById("contact-form");
-    const heading = document.getElementById("contact-heading");
-    const intro = document.getElementById("contact-intro");
+      const form = document.getElementById("contact-form");
+      const heading = document.getElementById("contact-heading");
+      const intro = document.getElementById("contact-intro");
 
-    form.querySelectorAll("input, textarea").forEach((el) => {
-      el.addEventListener("invalid", () => {
-        el.setCustomValidity(
-          el.name === "email"
-            ? "We'll need a way to reach you."
-            : "Tell us a little something.",
+      form.querySelectorAll("input, textarea").forEach((el) => {
+        el.addEventListener("invalid", () => {
+          el.setCustomValidity(
+            el.name === "email"
+              ? "We'll need a way to reach you."
+              : "Tell us a little something.",
+          );
+        });
+        el.addEventListener("input", () => el.setCustomValidity(""));
+      });
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const btn = form.querySelector("button");
+        btn.disabled = true;
+        btn.textContent = "Sending...";
+
+        emailjs.sendForm("3Soeurs", "template_61eezn8", form).then(
+          () => {
+            form.style.display = "none";
+            intro.style.display = "none";
+            heading.textContent = "Got it. We'll be in touch.";
+          },
+          () => {
+            btn.disabled = false;
+            btn.textContent = "Let's see where this goes";
+          },
         );
       });
-      el.addEventListener("input", () => el.setCustomValidity(""));
-    });
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const btn = form.querySelector("button");
-      btn.disabled = true;
-      btn.textContent = "Sending...";
-
-      emailjs.sendForm("3Soeurs", "template_61eezn8", form).then(
-        () => {
-          form.style.display = "none";
-          intro.style.display = "none";
-          heading.textContent = "Got it. We'll be in touch.";
-        },
-        () => {
-          btn.disabled = false;
-          btn.textContent = "Let's see where this goes";
-        },
-      );
-    });
-  </script>
+    </script>
+  </body>
 </html>

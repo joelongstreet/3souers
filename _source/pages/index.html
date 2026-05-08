@@ -1,0 +1,272 @@
+<!--
+output: index.html
+title: 3 Sœurs: Built together
+description: Building little libraries in Kansas City, as a family.
+og-image: https://3soeurs.net/share.jpg
+og-url: https://3soeurs.net/
+depth: 0
+no-header: true
+-->
+
+<!-- EXTRA_HEAD -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<style>
+  .hero {
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 2rem;
+    background: url("./hero.jpg") center / cover no-repeat;
+  }
+  .hero video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    filter: sepia(20%);
+    z-index: 0;
+  }
+  .hero-logo {
+    position: relative;
+    z-index: 1;
+    padding: 2rem 4rem;
+    margin-top: -2rem;
+    margin-right: -5rem;
+    filter: hue-rotate(var(--stroke-hue, 0deg));
+  }
+  .hero-logo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("./paint-stroke.png") center / 100% 100% no-repeat;
+    mask-image: url("./logo.svg"), linear-gradient(black, black);
+    mask-composite: subtract;
+    mask-size: auto 4rem, 100%;
+    mask-repeat: no-repeat, no-repeat;
+    mask-position: center, center;
+    -webkit-mask-image: url("./logo.svg"), linear-gradient(black, black);
+    -webkit-mask-composite: destination-out;
+    -webkit-mask-size: auto 4rem, 100%;
+    -webkit-mask-repeat: no-repeat, no-repeat;
+    -webkit-mask-position: center, center;
+  }
+  .hero-logo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    mask-image: url("./logo.svg");
+    mask-size: auto 4rem;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-image: url("./logo.svg");
+    -webkit-mask-size: auto 4rem;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+  }
+  .hero-logo .logo {
+    display: block;
+    height: 4rem;
+    aspect-ratio: 142 / 117;
+    visibility: hidden;
+  }
+</style>
+<!-- /EXTRA_HEAD -->
+
+<!-- BEFORE_SHELL -->
+<div class="hero">
+  <video autoplay muted loop playsinline poster="./hero.jpg">
+    <source src="./hero.mp4" type="video/mp4" />
+  </video>
+  <a class="hero-logo" href="#about"><span class="logo"></span></a>
+</div>
+<!-- /BEFORE_SHELL -->
+
+<page-section id="about">
+  <h1>Built together.</h1>
+  <p>
+    Trois Sœurs is French for three sisters. We're Jane, Ruby, and Lucy,
+    plus a mom, a dad, and a dog named Rufus who mostly just supervises.
+    We build things together, out of a little shop, with help from friends
+    when we need it.
+  </p>
+  <p>
+    Something happens when you build things with your hands alongside
+    people you love. We're still figuring out exactly what it is, but we
+    keep showing up anyway.
+  </p>
+</page-section>
+
+<page-section id="libraries">
+  <h2>What we're currently making</h2>
+  <p>
+    Right now, it's little libraries. The kind you find on a corner and
+    stop at for just a second to peek inside. We build them to live
+    outside, collect some weather, and give people a small excuse to slow
+    down.
+  </p>
+  <p>Each one ends up belonging to wherever it lands.</p>
+  <div class="grid">
+    <page-card
+      href="/3"
+      image="./3/poster.jpg"
+      title="For Louanne Hein"
+      description="A small thank-you to the person who taught Ruby that art is a feeling first and a skill second."
+      cta="Meet Louanne"
+    ></page-card>
+    <page-card
+      href="/4"
+      image="./4/poster.jpg"
+      title="For Grandma Mary and Papa Mark"
+      description="For two grandparents who somehow always know exactly how to meet each kid where they are."
+      cta="Meet the Grandparents"
+    ></page-card>
+    <page-card
+      href="/1"
+      image="./1/poster.jpg"
+      title="For Us"
+      description="Lives in our front yard. Started as ours, but the neighborhood had other ideas."
+      cta="Life on Holly Street"
+    ></page-card>
+    <page-card
+      href="/2"
+      image="./2/poster.jpg"
+      title="For Académie Lafayette"
+      description="Built from leftovers, which feels right for a school that teaches kids to make something out of anything."
+      cta="Our School, Our Story"
+    ></page-card>
+  </div>
+</page-section>
+
+<page-section id="people">
+  <h2>How we work together</h2>
+  <p>
+    We have roles, loosely. Mostly we just do whatever needs doing. Some
+    days that's painting and debating colors. Other days it's measuring
+    things twice and cutting once, and it comes out exactly right.
+  </p>
+  <p>It shifts around. That's kind of the whole point.</p>
+  <div class="grid">
+    <page-card
+      href="/people/jane"
+      image="./people/jane/poster.jpg"
+      title="Jane"
+      subtitle="Storytelling &amp; Sales"
+      description="Tells the story. Finds the people. Gets things out the door."
+      cta="Hard Things"
+    ></page-card>
+    <page-card
+      href="/people/ruby"
+      image="./people/ruby/poster.jpg"
+      title="Ruby"
+      subtitle="Design &amp; Color"
+      description="Has strong opinions about color. They are almost always right."
+      cta="Feeling Proud"
+    ></page-card>
+    <page-card
+      href="/people/lucy"
+      image="./people/lucy/poster.jpg"
+      title="Lucy"
+      subtitle="Construction &amp; Counting"
+      description="Builds things, counts things, makes sure they hold together."
+      cta="Just Try"
+    ></page-card>
+    <page-card
+      href="/people/mommy"
+      image="./people/mommy/poster.jpg"
+      title="Mommy"
+      subtitle="Operations &amp; Photography"
+      description="Keeps the whole thing from going sideways."
+      cta="Makes it Work"
+    ></page-card>
+    <page-card
+      href="/people/daddy"
+      image="./people/daddy/poster.jpg"
+      title="Daddy"
+      subtitle="Architect &amp; Builder"
+      description="Designs it, builds it, probably rebuilds it and then rebuilds it again."
+      cta="Work Together"
+    ></page-card>
+    <page-card
+      href="/people/rufus"
+      image="./people/rufus/poster.jpg"
+      title="Rufus"
+      subtitle="Chief Morale Officer"
+      description="Contributes nothing. Improves everything."
+      cta="Rufus Report"
+    ></page-card>
+  </div>
+</page-section>
+
+<page-section id="contact">
+  <h2 id="contact-heading">An open door</h2>
+  <p id="contact-intro">
+    If you want a little library for your yard, your school, or somewhere
+    you think could use one, or if you just want to say hi, we'd love to
+    hear from you.
+  </p>
+  <form id="contact-form">
+    <input
+      type="text"
+      name="email"
+      placeholder="Email or phone number"
+      required
+    />
+    <textarea
+      rows="4"
+      name="message"
+      placeholder="What you're thinking about"
+      required
+    ></textarea>
+    <button type="submit">Let's see where this goes</button>
+  </form>
+</page-section>
+
+<!-- EXTRA_SCRIPTS -->
+<script type="module">
+  emailjs.init({ publicKey: "bj2L_S3nwdlIeg191" });
+
+  const form = document.getElementById("contact-form");
+  const heading = document.getElementById("contact-heading");
+  const intro = document.getElementById("contact-intro");
+
+  form.querySelectorAll("input, textarea").forEach((el) => {
+    el.addEventListener("invalid", () => {
+      el.setCustomValidity(
+        el.name === "email"
+          ? "We'll need a way to reach you."
+          : "Tell us a little something.",
+      );
+    });
+    el.addEventListener("input", () => el.setCustomValidity(""));
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const btn = form.querySelector("button");
+    btn.disabled = true;
+    btn.textContent = "Sending...";
+
+    emailjs.sendForm("3Soeurs", "template_61eezn8", form).then(
+      () => {
+        form.style.display = "none";
+        intro.style.display = "none";
+        heading.textContent = "Got it. We'll be in touch.";
+      },
+      () => {
+        btn.disabled = false;
+        btn.textContent = "Let's see where this goes";
+      },
+    );
+  });
+</script>
+<!-- /EXTRA_SCRIPTS -->

@@ -23,21 +23,13 @@
 }
 
 @keyframes fade-out {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
+  from { opacity: 1; }
+  to { opacity: 0; }
 }
 
 @keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 *,
@@ -51,10 +43,10 @@
 html {
   background-color: var(--ink-soft);
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--ink-soft);
   margin: 0;
   font-family: "DM Sans", system-ui, sans-serif;
   background: var(--cream);
@@ -70,40 +62,163 @@ h3 {
   font-weight: 400;
   margin-bottom: 3rem;
 }
-h1 {
-  font-size: 3rem;
-}
-h2 {
-  font-size: 1.75rem;
-  line-height: 2.25rem;
-}
-h3 {
-  font-size: 1.5rem;
-}
-h4 {
-  font-size: 1.15rem;
-  font-weight: 600;
-}
-h5 {
-  font-size: 1.15rem;
-  opacity: 0.7;
-  font-style: italic;
-  font-weight: normal;
-}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 1.75rem; line-height: 2.25rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.15rem; font-weight: 600; }
+h5 { font-size: 1.15rem; font-style: italic; font-weight: normal; opacity: 0.7; }
+
 p {
   max-width: 45rem;
   font-size: 1.15rem;
   margin-bottom: 1rem;
 }
 
-page-section:nth-of-type(odd) {
-  --section-bg: var(--ink-soft);
-  --section-color: var(--cream);
+/* ─── Header ─────────────────────────────────────────────────────────────── */
+
+.site-header {
+  background: var(--ink-soft);
+  color: var(--cream);
+  font-family: "Shadows Into Light", cursive;
 }
-page-section:nth-of-type(even) {
-  --section-bg: var(--cream);
-  --section-color: var(--ink);
+
+.site-header a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  color: inherit;
+  text-decoration: none;
 }
+
+.site-header .number {
+  font-size: 3.5rem;
+  padding-right: 0.25rem;
+}
+
+.site-header h1 {
+  font-family: "Shadows Into Light", cursive;
+  font-size: 2.5rem;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+}
+
+.site-header h1::before {
+  content: "";
+  position: absolute;
+  inset: -1.25em -4em;
+  background: url("./paint-stroke.png") center / 100% 100% no-repeat;
+  filter: hue-rotate(var(--stroke-hue, 0deg));
+  z-index: -1;
+}
+
+/* ─── Footer ─────────────────────────────────────────────────────────────── */
+
+.footer-wrap.dark {
+  background: var(--ink-soft);
+  color: var(--cream);
+}
+
+.footer-wrap.light {
+  background: var(--cream);
+  color: var(--ink);
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 1rem;
+  font-size: 0.875rem;
+}
+
+footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+footer nav {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.logo-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -3em -4em;
+  background: url("./paint-stroke.png") center / 100% 100% no-repeat;
+  filter: hue-rotate(var(--stroke-hue, 0deg));
+  transform: translateX(-0.5rem) translateY(0.5rem) rotate(-10deg);
+  z-index: 0;
+}
+
+.logo-wrap a {
+  position: relative;
+  z-index: 1;
+}
+
+.logo {
+  display: block;
+  height: 4.5rem;
+  aspect-ratio: 142 / 117;
+  background-color: currentColor;
+  mask-image: url("./logo.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url("./logo.svg");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+
+/* ─── Page sections ──────────────────────────────────────────────────────── */
+
+section.page-section:nth-of-type(odd) {
+  background: var(--ink-soft);
+  color: var(--cream);
+}
+
+section.page-section:nth-of-type(even) {
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.page-section-inner {
+  padding: 4rem 2rem;
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+/* ─── Page poster ────────────────────────────────────────────────────────── */
+
+.page-poster {
+  display: block;
+  width: 100%;
+  background-color: var(--ink-soft);
+}
+
+.page-poster img {
+  display: block;
+  width: 100%;
+  max-width: 50rem;
+  margin: 0 auto;
+  height: auto;
+}
+
+/* ─── Grid ───────────────────────────────────────────────────────────────── */
 
 .grid {
   display: grid;
@@ -111,6 +226,67 @@ page-section:nth-of-type(even) {
   gap: 2rem;
   margin-top: 2rem;
 }
+
+/* ─── Page card ──────────────────────────────────────────────────────────── */
+
+.page-card {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 1rem;
+}
+
+.page-card .img {
+  aspect-ratio: 1 / 1;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.page-card .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.page-card a { display: block; }
+.page-card a:hover .img img { transform: scale(1.03); }
+
+.page-card h4 { margin-bottom: 0.5rem; }
+.page-card h5 { margin-top: -0.5rem; margin-bottom: 1rem; }
+.page-card p { max-width: none; }
+
+/* ─── CTA link ───────────────────────────────────────────────────────────── */
+
+.cta {
+  display: inline-block;
+  margin-top: auto;
+  padding: 0.25rem 0.75rem;
+  background: var(--highlight);
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: var(--btn-radius);
+  box-shadow: var(--btn-shadow);
+  letter-spacing: var(--btn-letter-spacing);
+  filter: hue-rotate(var(--btn-hue, 0deg));
+  position: relative;
+  overflow: hidden;
+}
+
+.cta::before {
+  content: "";
+  position: absolute;
+  inset: -15%;
+  background: url("./paint-stroke.png") center / cover no-repeat;
+  mix-blend-mode: soft-light;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.cta:hover { opacity: 0.85; }
+
+/* ─── Form elements ──────────────────────────────────────────────────────── */
 
 form {
   max-width: 100%;
@@ -129,6 +305,8 @@ textarea {
   font-family: inherit;
 }
 
+textarea { resize: vertical; }
+
 input:-webkit-autofill,
 textarea:-webkit-autofill,
 select:-webkit-autofill {
@@ -144,6 +322,8 @@ textarea:focus {
   box-shadow: 0 0 0 2px var(--highlight);
 }
 
+/* ─── Buttons & links ────────────────────────────────────────────────────── */
+
 :is(button, .btn) {
   background: var(--highlight);
   color: var(--cream);
@@ -155,6 +335,7 @@ textarea:focus {
   position: relative;
   overflow: hidden;
 }
+
 :is(button, .btn)::before {
   content: "";
   position: absolute;
@@ -172,12 +353,18 @@ button {
   cursor: pointer;
 }
 
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
 .btn {
   display: inline-block;
   text-decoration: none;
   padding: 0.5rem 1rem;
   margin-top: 1rem;
 }
+
 .btn:hover {
   opacity: 0.85;
 }

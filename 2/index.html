@@ -4,29 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>3 Sœurs: Académie Lafayette</title>
-    <meta
-      name="description"
-      content="Built for the kid's school - from scrap lumber."
-    />
-
+    <meta name="description" content="Built for the kid's school - from scrap lumber." />
     <meta property="og:title" content="3 Sœurs: Académie Lafayette" />
-    <meta
-      property="og:description"
-      content="Built for the kid's school - from scrap lumber."
-    />
+    <meta property="og:description" content="Built for the kid's school - from scrap lumber." />
     <meta property="og:image" content="https://3soeurs.net/share.jpg" />
     <meta property="og:url" content="https://3soeurs.net/2/" />
     <meta property="og:type" content="website" />
-
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/share.jpg" type="image/jpeg" />
     <link rel="stylesheet" href="../styles.css" />
-    <script type="module" src="../components/index.js"></script>
+    <style>:root { --stroke-hue: 252deg; }</style>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DJ9C7YKVN7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "G-DJ9C7YKVN7");
+    </script>
   </head>
   <body>
-    <page-shell>
-      <page-poster image="./poster.jpg"></page-poster>
-      <page-section>
+    <header class="site-header">
+      <a href="/"><h1><span class="number">3</span>sœurs</h1></a>
+    </header>
+    <div class="page-poster"><img src="./poster.jpg" alt="" /></div>
+    <section class="page-section">
+      <div class="page-section-inner">
         <h2>Built for Académie Lafayette</h2>
         <p>
           Trois Sœurs is Jane, Ruby, and Lucy. Three sisters who build things
@@ -55,13 +58,65 @@
           someday and find it still standing, still full of things.
         </p>
         <p>And if it's not, we'll build another one.</p>
-        <a class="btn" href="/#libraries">See all our little libraries »</a>
-      </page-section>
-      <page-section>
-        <project-contact project-id="2"></project-contact>
-      </page-section>
-      <page-poster image="./alternate.jpg"></page-poster>
-      <page-poster image="./alternate-2.jpg"></page-poster>
-    </page-shell>
+        <a class="btn" href="/#libraries" style="--btn-hue: 0deg">See all our little libraries »</a>
+      </div>
+    </section>
+    <section class="page-section">
+      <div class="page-section-inner">
+        <h2 id="memory-heading">What should this library remember?</h2>
+        <p id="memory-intro">Leave a note or share a memory. We'd love to know what this library means to you.</p>
+        <form id="memory-form">
+          <input type="text" name="name" placeholder="Name (optional)" />
+          <textarea rows="4" name="message" placeholder="What you're thinking about" required></textarea>
+          <button type="submit" style="--btn-hue: 180deg">Leave your mark</button>
+        </form>
+      </div>
+    </section>
+    <div class="page-poster"><img src="./alternate.jpg" alt="" /></div>
+    <div class="page-poster"><img src="./alternate-2.jpg" alt="" /></div>
+    <div class="footer-wrap dark">
+      <footer>
+        <div class="logo-wrap"><a href="/" aria-label="Home"><span class="logo"></span></a></div>
+        <span style="margin-top: 2rem;"><a href="/">Trois Sœurs</a> · Built together in Kansas City, Missouri</span>
+        <nav>
+          <a href="/#about">About</a>
+          <a href="/#people">Family</a>
+          <a href="/#contact">Contact</a>
+        </nav>
+      </footer>
+    </div>
+    <script>
+      emailjs.init({ publicKey: "bj2L_S3nwdlIeg191" });
+      const form = document.getElementById("memory-form");
+      const heading = document.getElementById("memory-heading");
+      const intro = document.getElementById("memory-intro");
+      form.querySelector("textarea").addEventListener("invalid", function () {
+        this.setCustomValidity("Tell us a little something.");
+      });
+      form.querySelector("textarea").addEventListener("input", function () {
+        this.setCustomValidity("");
+      });
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const btn = form.querySelector("button");
+        btn.disabled = true;
+        btn.textContent = "Sending...";
+        emailjs.send("3Soeurs", "template_61eezn8", {
+          project_id: "2",
+          email: form.querySelector('[name="name"]').value || "Anonymous",
+          message: form.querySelector('[name="message"]').value,
+        }).then(
+          function () {
+            form.style.display = "none";
+            intro.style.display = "none";
+            heading.textContent = "Remembered. Thank you.";
+          },
+          function () {
+            btn.disabled = false;
+            btn.textContent = "Leave your mark";
+          }
+        );
+      });
+    </script>
   </body>
 </html>

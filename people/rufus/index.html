@@ -4,30 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>3 Sœurs: Rufus</title>
-    <meta
-      name="description"
-      content="Rufus does not build. He supervises. It helps."
-    />
-
+    <meta name="description" content="Rufus does not build. He supervises. It helps." />
     <meta property="og:title" content="3 Sœurs: Rufus" />
-    <meta
-      property="og:description"
-      content="Rufus does not build. He supervises. It helps."
-    />
+    <meta property="og:description" content="Rufus does not build. He supervises. It helps." />
     <meta property="og:image" content="https://3soeurs.net/share.jpg" />
     <meta property="og:url" content="https://3soeurs.net/people/rufus/" />
     <meta property="og:type" content="website" />
-
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/share.jpg" type="image/jpeg" />
-
     <link rel="stylesheet" href="../../styles.css" />
-    <script type="module" src="../../components/index.js"></script>
+    <style>:root { --stroke-hue: 36deg; }</style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DJ9C7YKVN7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "G-DJ9C7YKVN7");
+    </script>
   </head>
   <body>
-    <page-shell>
-      <page-poster image="./alternate.jpg"></page-poster>
-      <page-section>
+    <header class="site-header">
+      <a href="/"><h1><span class="number">3</span>sœurs</h1></a>
+    </header>
+    <div class="page-poster"><img src="./alternate.jpg" alt="" /></div>
+    <section class="page-section">
+      <div class="page-section-inner">
         <h2>Rufus Report</h2>
         <p>
           I do not build the libraries. I do not track the numbers. I have never
@@ -41,9 +42,20 @@
           Reminding everyone to take breaks, preferably outside.
         </p>
         <p>The work matters. The people matter more. I help with that.</p>
-        <a class="btn" href="/#people">Meet the rest of the family »</a>
-      </page-section>
-      <page-poster image="./poster.jpg"></page-poster>
-    </page-shell>
+        <a class="btn" href="/#people" style="--btn-hue: 144deg">Meet the rest of the family »</a>
+      </div>
+    </section>
+    <div class="page-poster"><img src="./poster.jpg" alt="" /></div>
+    <div class="footer-wrap light">
+      <footer>
+        <div class="logo-wrap"><a href="/" aria-label="Home"><span class="logo"></span></a></div>
+        <span style="margin-top: 2rem;"><a href="/">Trois Sœurs</a> · Built together in Kansas City, Missouri</span>
+        <nav>
+          <a href="/#about">About</a>
+          <a href="/#people">Family</a>
+          <a href="/#contact">Contact</a>
+        </nav>
+      </footer>
+    </div>
   </body>
 </html>

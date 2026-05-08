@@ -4,30 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>3 Sœurs: Joe Longstreet</title>
-    <meta
-      name="description"
-      content="Joe builds little libraries with the kids. Feeling proud."
-    />
-
+    <meta name="description" content="Joe builds little libraries with the kids. Feeling proud." />
     <meta property="og:title" content="3 Sœurs: Joe Longstreet" />
-    <meta
-      property="og:description"
-      content="Joe builds little libraries with the kids. Feeling proud."
-    />
+    <meta property="og:description" content="Joe builds little libraries with the kids. Feeling proud." />
     <meta property="og:image" content="https://3soeurs.net/share.jpg" />
     <meta property="og:url" content="https://3soeurs.net/people/daddy/" />
     <meta property="og:type" content="website" />
-
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/share.jpg" type="image/jpeg" />
-
     <link rel="stylesheet" href="../../styles.css" />
-    <script type="module" src="../../components/index.js"></script>
+    <style>:root { --stroke-hue: 288deg; }</style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DJ9C7YKVN7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "G-DJ9C7YKVN7");
+    </script>
   </head>
   <body>
-    <page-shell>
-      <page-poster image="./alternate.jpg"></page-poster>
-      <page-section>
+    <header class="site-header">
+      <a href="/"><h1><span class="number">3</span>sœurs</h1></a>
+    </header>
+    <div class="page-poster"><img src="./alternate.jpg" alt="" /></div>
+    <section class="page-section">
+      <div class="page-section-inner">
         <h2>Work Together</h2>
         <p>
           This project has become less about building and more about how we
@@ -62,9 +63,20 @@
           At some point, they won't need me for this. When that happens, I'll be
           proud in a way that's hard to fully explain.
         </p>
-        <a class="btn" href="/#people">Meet the rest of the family »</a>
-      </page-section>
-      <page-poster image="./poster.jpg"></page-poster>
-    </page-shell>
+        <a class="btn" href="/#people" style="--btn-hue: 252deg">Meet the rest of the family »</a>
+      </div>
+    </section>
+    <div class="page-poster"><img src="./poster.jpg" alt="" /></div>
+    <div class="footer-wrap light">
+      <footer>
+        <div class="logo-wrap"><a href="/" aria-label="Home"><span class="logo"></span></a></div>
+        <span style="margin-top: 2rem;"><a href="/">Trois Sœurs</a> · Built together in Kansas City, Missouri</span>
+        <nav>
+          <a href="/#about">About</a>
+          <a href="/#people">Family</a>
+          <a href="/#contact">Contact</a>
+        </nav>
+      </footer>
+    </div>
   </body>
 </html>

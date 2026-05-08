@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{TITLE}}</title>
+    <meta name="description" content="{{DESCRIPTION}}" />
+    <meta property="og:title" content="{{OG_TITLE}}" />
+    <meta property="og:description" content="{{OG_DESCRIPTION}}" />
+    <meta property="og:image" content="{{OG_IMAGE}}" />
+    <meta property="og:url" content="{{OG_URL}}" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="{{FAVICON_JPG}}" type="image/jpeg" />
+    <link rel="stylesheet" href="{{PREFIX}}styles.css" />
+    <style>:root { --stroke-hue: {{STROKE_HUE}}; }</style>
+    {{EXTRA_HEAD}}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DJ9C7YKVN7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "G-DJ9C7YKVN7");
+    </script>
+  </head>
+  <body>
+    {{BEFORE_SHELL}}
+    {{HEADER}}
+    {{CONTENT}}
+    <div class="footer-wrap {{FOOTER_THEME}}">
+      <footer>
+        <div class="logo-wrap"><a href="/" aria-label="Home"><span class="logo"></span></a></div>
+        <span style="margin-top: 2rem;"><a href="/">Trois Sœurs</a> · Built together in Kansas City, Missouri</span>
+        <nav>
+          <a href="/#about">About</a>
+          <a href="/#people">Family</a>
+          <a href="/#contact">Contact</a>
+        </nav>
+      </footer>
+    </div>
+    {{EXTRA_SCRIPTS}}
+  </body>
+</html>
